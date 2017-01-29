@@ -1,0 +1,48 @@
+
+# Env
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export EDITOR='vim'
+
+# aliases
+alias df='df -h'
+alias rmr='rm -R'
+alias wget='wget --trust-server-names --restrict-file-names=unix --tries=3'
+alias du='du -h'
+alias cp='\cp -i'
+alias cpa='\cp -ai'
+alias mv='mv -i'
+alias rm='rm -i'
+alias rmr='\rm -R'
+alias du1='du -ch -d 1'
+
+mntfs() {
+    local _DISK=$1
+    local _DEST=$2
+    local _NAME=$3
+    mkdir -p "$_DEST"
+    sudo ntfs-3g -o uid=`id -u` -o gid=0 "$_DISK" "$_DEST" -o volname="$_NAME" -o nobrowse
+}
+
+msshfs() {
+    local _N=$1
+    shift
+    local _D=$1
+    shift
+    mkdir -p "$_D"
+    sshfs $@ "$_D" -o uid=`id -u` -o gid=0 -o volname="$_N" -o no_readahead,noappledouble,nolocalcaches,reconnect 
+    # -o Ciphers=arcfour
+}
+
+alias pk='cat ~/.ssh/id_rsa.pub'
+alias kh='vim ~/.ssh/known_hosts'
+alias vim.tiny='vim'
+
+alias jpegprogressive='jpegtran -copy none -optimize -progressive'
+
+pkcopy() {
+    pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat > .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
+}
+

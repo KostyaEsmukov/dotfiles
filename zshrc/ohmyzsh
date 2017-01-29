@@ -1,0 +1,10 @@
+
+# Oh my zsh
+
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE='compatible'
+#POWERLEVEL9K_MODE='flat'
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
