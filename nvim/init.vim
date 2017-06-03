@@ -3,6 +3,11 @@ call plug#begin()
 
 "## IDE-alike
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
+"Plug 'neomake/neomake' " syntax checker, linter
+Plug 'vim-syntastic/syntastic' " syntax checker
+Plug 'xolox/vim-easytags'  " tags generator
+Plug 'xolox/vim-misc' " required by /\
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -12,20 +17,24 @@ Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter'
 Plug 'dkprice/vim-easygrep'
 Plug 'mhinz/vim-startify' " start screen, session manager
+Plug 'mileszs/ack.vim' " search with ack
 
 "## powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"## etc
-Plug 'editorconfig/editorconfig-vim'
+"## markdown
+Plug 'neovim/node-host', { 'do': 'npm install' }
+Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+
+"## editor
+Plug 'editorconfig/editorconfig-vim' " .editorconfig support
+Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
+Plug 'tpope/vim-commentary' " block comment
 
 " TODO:
-"Plug 'neomake/neomake' " linter
 "??? Plug 'alfredodeza/coveragepy.vim'
-"
 "Plug 'vim-scripts/indentpython.vim'
-"
 "Plug 'tmhedberg/SimpylFold'
 "nnoremap <space> za
 
@@ -33,6 +42,7 @@ call plug#end()
 
 "# remaps
 " noremap <space> :
+nnoremap ; :
 
 "## window cycling
 nnoremap <tab> <c-w>
@@ -41,12 +51,22 @@ nnoremap <tab><tab> <c-w><c-w>
 "## terminal
 tnoremap <Esc> <c-\><c-n>
 
+"## line swaps
+map <D-Up> kddpk
+map <D-Down> ddp
+
 "# colors
 colorscheme kalisi
 set background=dark
 
+"# autosave changes
+" http://vim.wikia.com/wiki/Auto_save_files_when_focus_is_lost
+:autocmd FocusLost * silent! wa  " untitled buffers are silently ignored
+set autowriteall
+
 "# editor
 set colorcolumn=80 " vertical line
+set cursorcolumn cursorline " show cursor position in a cross-like fashion
 
 set cb=unnamedplus " enable system clipboard. Don't forget to enable the 'Apps may access clipboard' in the iTerm2 settings
 
@@ -61,6 +81,14 @@ set expandtab           " Insert spaces when TAB is pressed.
 set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
 
+" case insensitive search
+set ignorecase
+set smartcase
+
+" spell checking
+set spell spelllang=en_us
+
+" more natural splitting algo
 set splitbelow
 set splitright
 
@@ -93,7 +121,7 @@ let g:rooter_silent_chdir = 1
 
 "## FZF
 map <S-z> :FZF<CR>
-let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+let $FZF_DEFAULT_COMMAND= 'ag -g ""' " ignore files listed in .gitignore
 
 "## vim-gitgutter
 set updatetime=250 " reduce update delay
@@ -109,6 +137,17 @@ endfun
 
 command! TrimWhitespace call TrimWhitespace()
 
-autocmd BufWritePre *.py,*.ts,*.js,*.h,*.c,*.hpp,*.cpp,*.rb,*.java,*.html,*.css,*.sh :call TrimWhitespace()
+" http://stackoverflow.com/a/10410590
+autocmd BufWritePre * if index(['markdown'], &ft) < 0 | :call TrimWhitespace()
 
+"# ack
+" don't jump to the first result
+cnoreabbrev Ack Ack!
+nnoremap <S-x> :Ack!<Space>
+" fix perl warnings
+let $LANG= 'en_US.UTF-8'
+let $LC_ALL= 'en_US.UTF-8'
+
+"# commentary.vim
+map <D-/> gc
 

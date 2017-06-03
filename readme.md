@@ -13,9 +13,10 @@
     pip3 install neovim
     gem install neovim
     brew install ag
+    brew install ctags-exuberant
 
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    curl -fLo ~/.config/nvim/colors/kalisi.vim https://raw.githubusercontent.com/freeo/vim-kalisi/master/colors/kalisi.vim
+    curl -fLo ~/.config/nvim/colors/kalisi.vim --create-dirs https://raw.githubusercontent.com/freeo/vim-kalisi/master/colors/kalisi.vim
 
     mkdir -p ~/.config/nvim/
     ln -sv ~/dotfiles/nvim/init.vim ~/.config/nvim/
