@@ -17,6 +17,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias rmr='\rm -R'
 alias du1='du -ch -d 1'
+alias scp='\scp -p'
 
 mntfs() {
     local _DISK=$1
@@ -45,4 +46,8 @@ alias jpegprogressive='jpegtran -copy none -optimize -progressive'
 pkcopy() {
     pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat > .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
 }
+
+alias ldd='otool -L'
+alias stripexif='exiftool -all= '
+alias p8='ping 8.8.8.8'
 
