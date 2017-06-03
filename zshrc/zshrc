@@ -51,3 +51,6 @@ alias ldd='otool -L'
 alias stripexif='exiftool -all= '
 alias p8='ping 8.8.8.8'
 
+
+xcode-select --install >/dev/null 2>&1 || true
+
