@@ -16,7 +16,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: ki
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter'
 Plug 'dkprice/vim-easygrep'
-Plug 'mhinz/vim-startify' " start screen, session manager
+" Plug 'mhinz/vim-startify' " start screen, session manager
 Plug 'mileszs/ack.vim' " search with ack
 
 "## powerline
