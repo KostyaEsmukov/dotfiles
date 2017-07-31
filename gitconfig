@@ -1,0 +1,7 @@
+[user]
+	name = Kostya Esmukov
+	email = kostya@esmukov.ru
+	signingkey = 2D3B9C1712FF84F7
+[commit]
+	gpgsign = true
+
