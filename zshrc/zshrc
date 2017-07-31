@@ -44,13 +44,20 @@ alias vim.tiny='vim'
 alias jpegprogressive='jpegtran -copy none -optimize -progressive'
 
 pkcopy() {
-    pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat > .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
+    pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
 }
 
 alias ldd='otool -L'
 alias stripexif='exiftool -all= '
 alias p8='ping 8.8.8.8'
 
+alias n='nvim'
+alias v='vim'
+
+mdcd() {
+    mkdir -p "$@"
+    cd "$@"
+}
 
 xcode-select --install >/dev/null 2>&1 || true
 
