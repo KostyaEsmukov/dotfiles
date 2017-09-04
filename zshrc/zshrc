@@ -47,7 +47,6 @@ pkcopy() {
     pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
 }
 
-alias ldd='otool -L'
 alias stripexif='exiftool -all= '
 alias p8='ping 8.8.8.8'
 
@@ -59,5 +58,14 @@ mdcd() {
     cd "$@"
 }
 
-xcode-select --install >/dev/null 2>&1 || true
+if [ "Darwin" = `uname` ]; then
+    alias finder='open .'
+    alias ldd='otool -L'
+
+    activate_conda() {
+        export PATH=/Users/kostya/miniconda3/bin:$PATH
+    }
+
+    xcode-select --install >/dev/null 2>&1 || true
+fi
 
