@@ -81,6 +81,9 @@ set expandtab           " Insert spaces when TAB is pressed.
 set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
 
+" Enable mouse integration
+set mouse=a
+
 " case insensitive search
 set ignorecase
 set smartcase
