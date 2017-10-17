@@ -87,7 +87,7 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 
 
-
+defaults write com.apple.universalaccess reduceMotion -bool true
 
 
 
@@ -95,7 +95,7 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+# sudo nvram SystemAudioVolume=" " - doesn't work
 
 defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 

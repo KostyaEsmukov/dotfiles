@@ -63,7 +63,7 @@ if [ "Darwin" = `uname` ]; then
     alias ldd='otool -L'
 
     activate_conda() {
-        export PATH=/Users/kostya/miniconda3/bin:$PATH
+        export PATH=/Users/kostya/miniconda3/bin:/anaconda3/bin:$PATH
     }
 
     xcode-select --install >/dev/null 2>&1 || true
