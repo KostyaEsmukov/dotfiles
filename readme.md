@@ -58,3 +58,7 @@
     	path = dotfiles/gitconfig
     EOF
 
+## Ack
+
+    ln -s ~/dotfiles/.ackrc ~/
+
