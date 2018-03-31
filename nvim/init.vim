@@ -133,6 +133,7 @@ let $FZF_DEFAULT_COMMAND= 'ag -g ""' " ignore files listed in .gitignore
 
 "## vim-gitgutter
 set updatetime=250 " reduce update delay
+let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
 
 "# Trim trailing whitespaces
 " http://vi.stackexchange.com/a/456
@@ -156,18 +157,12 @@ nnoremap <S-x> :Ack!<Space>
 let $LANG= 'en_US.UTF-8'
 let $LC_ALL= 'en_US.UTF-8'
 
-"# commentary.vim
-map <D-/> gc
-
 "# Polyglot
 syntax on
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
-
-"# gitgutter
-let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
 
 "# guides
 set colorcolumn=80,90,100 " vertical line
