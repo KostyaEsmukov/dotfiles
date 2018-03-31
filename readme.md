@@ -60,5 +60,5 @@
 
 ## Ack
 
-    ln -s ~/dotfiles/.ackrc ~/
+    ln -s ~/dotfiles/ackrc ~/.ackrc
 
