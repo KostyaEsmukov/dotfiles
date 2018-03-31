@@ -14,7 +14,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
-Plug 'dkprice/vim-easygrep' " \vV - search word under cursor 
+Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
+Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
 
 "## powerline
