@@ -159,3 +159,9 @@ let $LC_ALL= 'en_US.UTF-8'
 "# commentary.vim
 map <D-/> gc
 
+"# Polyglot
+syntax on
+
+let g:ansible_unindent_after_newline = 1
+let g:ansible_extra_keywords_highlight = 1
+let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
