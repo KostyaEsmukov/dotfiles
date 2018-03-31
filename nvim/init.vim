@@ -4,9 +4,9 @@ call plug#begin()
 "## IDE-alike
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
-Plug 'vim-syntastic/syntastic' " syntax checker
 Plug 'xolox/vim-easytags'  " tags generator
 Plug 'xolox/vim-misc' " required by /\
+Plug 'w0rp/ale' " linter
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -70,7 +70,6 @@ set background=dark
 set autowriteall
 
 "# editor
-set colorcolumn=80 " vertical line
 set cursorcolumn cursorline " show cursor position in a cross-like fashion
 
 set cb=unnamedplus " enable system clipboard. Don't forget to enable the 'Apps may access clipboard' in the iTerm2 settings
@@ -165,3 +164,8 @@ syntax on
 let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
+
+"# guides
+set colorcolumn=80,90,100 " vertical line
+highlight ColorColumn guibg=gray30
+

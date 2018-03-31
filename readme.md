@@ -15,14 +15,15 @@
     # macos
     # brew tap neovim/neovim
     brew install neovim
-    pip install --user neovim
-    pip3 install --user neovim
+    pip install --user --upgrade neovim
+    pip3 install --user --upgrade neovim flake8
     brew install ag
     brew install ctags-exuberant
 
     # fedora
     sudo dnf install neovim ruby ruby-devel @development-tools redhat-rpm-config the_silver_searcher ctags
 
+    npm install -g neovim
     gem install neovim
     mkdir -p ~/.config/nvim/
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -34,6 +35,7 @@
     ln -sv ~/dotfiles/nvim/init.vim ~/.config/nvim/
     nvim
     # :PlugInstall
+    # :UpdateRemotePlugins
     # ~/.fzf/install
 
 ## Vim
@@ -46,14 +48,14 @@
     sudo dnf install vim
 
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    
+
     ln -sv ~/dotfiles/vim/.vimrc ~/
     vim +PluginInstall +qall
 
 ## Git
 
     cat >> .gitconfig <<EOF
-    
+
     [include]
     	path = dotfiles/gitconfig
     EOF
@@ -61,4 +63,8 @@
 ## Ack
 
     ln -s ~/dotfiles/ackrc ~/.ackrc
+
+## Flake8
+
+    ln -s ~/dotfiles/flake8 ~/.config/flake8
 
