@@ -33,7 +33,7 @@ msshfs() {
     local _D=$1
     shift
     mkdir -p "$_D"
-    sshfs $@ "$_D" -o uid=`id -u` -o gid=0 -o volname="$_N" -o no_readahead,noappledouble,nolocalcaches,reconnect 
+    sshfs $@ "$_D" -o uid=`id -u` -o gid=0 -o volname="$_N" -o no_readahead,noappledouble,nolocalcaches,reconnect
     # -o Ciphers=arcfour
 }
 
@@ -49,6 +49,7 @@ pkcopy() {
 
 alias stripexif='exiftool -all= '
 alias p8='ping 8.8.8.8'
+alias p='ping'
 
 alias n='nvim'
 alias v='vim'
@@ -68,4 +69,8 @@ if [ "Darwin" = `uname` ]; then
 
     xcode-select --install >/dev/null 2>&1 || true
 fi
+
+alias py="python"
+alias py2="python2"
+alias py3="python3"
 
