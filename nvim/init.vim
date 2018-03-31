@@ -4,19 +4,17 @@ call plug#begin()
 "## IDE-alike
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
-"Plug 'neomake/neomake' " syntax checker, linter
 Plug 'vim-syntastic/syntastic' " syntax checker
 Plug 'xolox/vim-easytags'  " tags generator
 Plug 'xolox/vim-misc' " required by /\
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
 Plug 'airblade/vim-rooter' " changes cwd to git root
-Plug 'airblade/vim-gitgutter'
-Plug 'dkprice/vim-easygrep'
-" Plug 'mhinz/vim-startify' " start screen, session manager
+Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
+Plug 'dkprice/vim-easygrep' " \vV - search word under cursor 
 Plug 'mileszs/ack.vim' " search with ack
 
 "## powerline
