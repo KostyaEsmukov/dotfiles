@@ -55,6 +55,13 @@ tnoremap <Esc> <c-\><c-n>
 map <D-Up> kddpk
 map <D-Down> ddp
 
+"## delete w/o copying. leader is \.
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+"## replace selection with the register contents
+vnoremap <leader>p "_dP
+
 "# colors
 colorscheme kalisi
 set background=dark
