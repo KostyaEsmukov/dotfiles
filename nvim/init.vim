@@ -165,6 +165,9 @@ let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 
+"# gitgutter
+let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
+
 "# guides
 set colorcolumn=80,90,100 " vertical line
 highlight ColorColumn guibg=gray30
