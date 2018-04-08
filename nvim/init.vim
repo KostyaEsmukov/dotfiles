@@ -9,8 +9,11 @@ Plug 'xolox/vim-misc' " required by /\
 Plug 'w0rp/ale' " linter
 
 "## Files navigation + VCS
-Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons' " file icons
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
+Plug 'Aldlevine/nerdtree-git-plugin' " fork of the above, which colors whole line.  https://github.com/Xuyuanp/nerdtree-git-plugin/pull/79
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
@@ -127,6 +130,15 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$']
 " open nerdtree when vim is started without a file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Enable folder icons in NerdTree
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+
+let g:NERDTreeGitStatusNodeColorization = 1  "enables colorization
+let g:NERDTreeGitStatusWithFlags = 1  "enables flags, (may be default), required for colorization
+highlight link NERDTreeGitStatusModified Tag  "custom color
+
 "## vim rooter
 let g:rooter_silent_chdir = 1
 

@@ -30,7 +30,7 @@
     curl -fLo ~/.config/nvim/colors/kalisi.vim --create-dirs https://raw.githubusercontent.com/freeo/vim-kalisi/master/colors/kalisi.vim
 
     # Install fonts and set them in your terminal
-    # https://github.com/powerline/fonts/tree/master/Cousine
+    # https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Cousine
 
     ln -sv ~/dotfiles/nvim/init.vim ~/.config/nvim/
     nvim
