@@ -9,8 +9,8 @@ Plug 'xolox/vim-misc' " required by /\
 Plug 'w0rp/ale' " linter
 
 "## Files navigation + VCS
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
@@ -124,6 +124,9 @@ map <leader>r :NERDTreeFind<cr>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif " http://superuser.com/a/474298
 let NERDTreeIgnore=['\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$']
 
+" open nerdtree when vim is started without a file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "## vim rooter
 let g:rooter_silent_chdir = 1
 
