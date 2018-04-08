@@ -1,4 +1,7 @@
---ignore-dir=.idea/
---ignore-dir=node_modules/
 --ignore-dir=.eggs
+--ignore-dir=.idea/
+--ignore-dir=.tox
+--ignore-dir=build
+--ignore-dir=dist
+--ignore-dir=node_modules/
 
