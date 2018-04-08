@@ -169,5 +169,5 @@ let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plu
 
 "# guides
 set colorcolumn=80,90,100 " vertical line
-highlight ColorColumn guibg=gray30
+highlight ColorColumn guibg=gray20
 
