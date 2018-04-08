@@ -33,6 +33,7 @@ Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
 Plug 'tpope/vim-commentary' " block comment
+Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
 
 " TODO:
 "??? Plug 'alfredodeza/coveragepy.vim'
