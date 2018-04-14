@@ -26,8 +26,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "## markdown
-Plug 'neovim/node-host', { 'do': 'npm install' }
-Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+Plug 'iamcco/markdown-preview.vim'
 
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
