@@ -74,6 +74,15 @@ set background=dark
 :autocmd FocusLost * silent! wa  " untitled buffers are silently ignored
 set autowriteall
 
+"# autoreload changed files
+" Courtesy of https://unix.stackexchange.com/a/383044
+" set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+" https://askubuntu.com/a/825599
+"autocmd CursorHold,CursorHoldI * call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd p
+
+
 "# editor
 set cursorcolumn cursorline " show cursor position in a cross-like fashion
 
