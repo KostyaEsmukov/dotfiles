@@ -15,8 +15,16 @@
     # macos
     # brew tap neovim/neovim
     brew install neovim
-    pip install --user --upgrade neovim
-    pip3 install --user --upgrade neovim flake8
+    pip3 install --user --upgrade flake8
+
+    pyenv shell 2.7
+    mkvirtualenv neovim_py2
+    pip install --upgrade neovim
+    pyenv shell 3.6
+    mkvirtualenv neovim_py3
+    pip install --upgrade neovim
+    deactivate
+
     brew install ag
     brew install ctags-exuberant
 
