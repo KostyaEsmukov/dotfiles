@@ -59,6 +59,19 @@ mdcd() {
     cd "$@"
 }
 
+wgen() {
+    # Generates 5 random words
+    # https://blogs.warwick.ac.uk/mikewillis/entry/random_words/
+    WORDFILE="/usr/share/dict/words"
+    NUMWORDS=5
+    tL=`awk 'NF!=0 {++c} END {print c}' $WORDFILE`
+    for i in `seq $NUMWORDS`
+    do
+        rnum=$((`od -vAn -N4 -tu4 < /dev/urandom` % $tL + 1))
+        sed -n "$rnum p" $WORDFILE
+    done
+}
+
 if [ "Darwin" = `uname` ]; then
     alias finder='open .'
     alias ldd='otool -L'
