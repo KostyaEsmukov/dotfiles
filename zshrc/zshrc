@@ -83,3 +83,64 @@ if [ "Darwin" = `uname` ]; then
     xcode-select --install >/dev/null 2>&1 || true
 fi
 
+
+# Theme
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+if [[ "$USER" == "root" ]]; then
+    CARETCOLOR="red"
+else
+    CARETCOLOR="green"
+fi
+
+venv_current() {
+    [ -n "$VIRTUAL_ENV" ] && echo "%{$fg_bold[green]%}🐍 (${VIRTUAL_ENV:t})%{$reset_color%} "
+}
+
+PROMPT='
+╭─${ret_status} %{$reset_color%}[%n@%m %{$fg[cyan]%}%~%{$reset_color%}] $(venv_current)$(git_prompt_info)⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+╰─%{$fg[$CARETCOLOR]%}\$%{$reset_color%} '
+
+
+# Iterm tab colors
+
+tab_color() {
+    # https://gist.github.com/wadey/1140259
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+tab_reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+    trap - INT EXIT
+}
+
+TERM_LOCAL_TAB_COLOR=("174" "251" "213")  # light green
+TERM_LOCAL_TAB_COLOR_NVIM=("219" "222" "109")  # light yellow
+
+tab_color_env() {
+    if [ "${#@[@]}" -eq 0 ]; then
+        tab_reset
+    else
+        tab_color $@
+    fi
+}
+
+iterm2_tab_precmd() {
+    tab_color_env $TERM_LOCAL_TAB_COLOR
+}
+
+iterm2_tab_preexec() {
+    if [[ "$1" =~ "^ssh " ]]; then
+    	tab_reset
+    elif [[ "$1" =~ "^(n|nvim)( |$)" ]]; then
+        tab_color_env $TERM_LOCAL_TAB_COLOR_NVIM
+    fi
+}
+
+# https://github.com/wadey/dotfiles/blob/master/zsh/iterm2.zsh
+autoload -U add-zsh-hook
+add-zsh-hook precmd  iterm2_tab_precmd
+add-zsh-hook preexec iterm2_tab_preexec
+
