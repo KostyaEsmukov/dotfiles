@@ -193,6 +193,14 @@ let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 
+"# ALE
+
+let g:ale_fixers = {
+\    'python': ['isort'],
+\}
+
+nmap <F8> <Plug>(ale_fix)
+
 "# guides
 set colorcolumn=80,90,100 " vertical line
 highlight ColorColumn guibg=gray20
