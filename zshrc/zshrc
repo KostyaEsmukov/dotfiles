@@ -104,7 +104,7 @@ venv_current() {
 }
 
 PROMPT='
-╭─${ret_status} %{$reset_color%}[%n@%m %{$fg[cyan]%}%~%{$reset_color%}] $(venv_current)$(git_prompt_info)⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+%{$reset_color%}╭─${ret_status} %{$reset_color%}[%n@%{$fg[$TERM_PROMPT_HOSTNAME_COLOR]%}%m%{$reset_color%} %{$fg[cyan]%}%~%{$reset_color%}] $(venv_current)$(git_prompt_info)⌚ %{$fg_bold[red]%}%*%{$reset_color%}
 ╰─%{$fg[$CARETCOLOR]%}\$%{$reset_color%} '
 
 
@@ -121,6 +121,7 @@ tab_reset() {
     trap - INT EXIT
 }
 
+TERM_PROMPT_HOSTNAME_COLOR="green"
 TERM_LOCAL_TAB_COLOR=("174" "251" "213")  # light green
 TERM_LOCAL_TAB_COLOR_NVIM=("219" "222" "109")  # light yellow
 
