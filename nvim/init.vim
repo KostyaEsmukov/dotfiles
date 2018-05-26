@@ -95,6 +95,7 @@ set textwidth=0         " Hard-wrap long lines as you type them.
 set expandtab           " Insert spaces when TAB is pressed.
 set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
+set nowrap
 
 " Enable mouse integration
 set mouse=a
@@ -195,8 +196,12 @@ let g:ale_fixers = {
 
 nmap <F8> <Plug>(ale_fix)
 
-"# guides
-set colorcolumn=80,90,100 " vertical line
+"# editorconfig
+
+let g:EditorConfig_disable_rules = ['max_line_length']
+
+"# Rulers
+let &colorcolumn="72,80,".join(range(90,400),",")  " mark 72 (PEP-8 docs), 80 (PEP-8), 90+
 highlight ColorColumn guibg=gray20
 
 "# mark bad whitespaces
