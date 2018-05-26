@@ -61,7 +61,7 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 "## replace selection with the register contents
-vnoremap <leader>p "_dP
+vnoremap <leader>p "_c<esc>p
 
 "# colors
 colorscheme kalisi
