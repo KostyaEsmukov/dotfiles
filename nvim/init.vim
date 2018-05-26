@@ -191,7 +191,7 @@ let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plu
 "# ALE
 
 let g:ale_fixers = {
-\    'python': ['isort'],
+\    'python': ['black', 'isort'],
 \}
 
 nmap <F8> <Plug>(ale_fix)
