@@ -4,8 +4,6 @@ call plug#begin()
 "## IDE-alike
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
-Plug 'xolox/vim-easytags'  " tags generator
-Plug 'xolox/vim-misc' " required by /\
 Plug 'w0rp/ale' " linter
 
 "## Files navigation + VCS
