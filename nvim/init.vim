@@ -116,10 +116,6 @@ set encoding=utf-8
 
 set list " show tabs
 
-"# mark bad whitespaces
-highlight BadWhitespace ctermbg=red guibg=darkred
-autocmd BufRead,BufNewFile * match BadWhitespace /\s\+$/
-
 "# Plugins config
 
 "## Airline
@@ -204,4 +200,16 @@ nmap <F8> <Plug>(ale_fix)
 "# guides
 set colorcolumn=80,90,100 " vertical line
 highlight ColorColumn guibg=gray20
+
+"# mark bad whitespaces
+highlight BadWhitespace ctermbg=red guibg=darkred
+autocmd InsertEnter,InsertLeave * match BadWhitespace /\s\+$/
+
+"# mark bad words
+
+" https://css-tricks.com/words-avoid-educational-writing/
+" https://twitter.com/jesstelford/status/992757640315858946
+highlight BadEduWords ctermbg=red guibg=darkred
+autocmd InsertEnter,InsertLeave * match BadEduWords /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\|indeed\)\>/
+
 
