@@ -5,6 +5,7 @@ call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
 Plug 'w0rp/ale' " linter
+Plug 'alfredodeza/coveragepy.vim'  " coverage.py integration. :Coveragepy show
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree'
