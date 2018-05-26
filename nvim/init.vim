@@ -200,6 +200,15 @@ nmap <F8> <Plug>(ale_fix)
 
 let g:EditorConfig_disable_rules = ['max_line_length']
 
+"# ctags
+
+set tags=.tags
+" Run `pyctags` to regenerate ctags (defined in the zshrc).
+
+" C-] -- navigate to definition. 
+" C-o -- go back.
+" g] -- list definitions.
+
 "# Rulers
 let &colorcolumn="72,80,".join(range(90,400),",")  " mark 72 (PEP-8 docs), 80 (PEP-8), 90+
 highlight ColorColumn guibg=gray20

@@ -76,4 +76,5 @@
 
     ln -s ~/dotfiles/flake8 ~/.config/flake8
     ln -s ~/dotfiles/isort.cfg ~/.isort.cfg
+    ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 

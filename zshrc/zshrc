@@ -72,6 +72,17 @@ wgen() {
     done
 }
 
+pyctags() {
+    [ -z "$VIRTUAL_ENV" ] && echo "Activate a virtualenv first." && return 1
+    local _gitdir;
+    _gitdir=`git rev-parse --show-toplevel`
+    [ $? -ne 0 ] && echo "Must be a git repo." && return 1
+    echo Generating python ctags for "$_gitdir"
+    pushd "$_gitdir"
+    ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./.tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
+    popd
+}
+
 if [ "Darwin" = `uname` ]; then
     alias finder='open .'
     alias ldd='otool -L'
