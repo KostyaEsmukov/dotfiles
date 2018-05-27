@@ -15,7 +15,7 @@
     # macos
     # brew tap neovim/neovim
     brew install neovim
-    pip3 install --user --upgrade flake8 isort flake8-isort black
+    pip3 install --user --upgrade flake8 isort flake8-isort black mypy
 
     pyenv shell 2.7
     mkvirtualenv neovim_py2
