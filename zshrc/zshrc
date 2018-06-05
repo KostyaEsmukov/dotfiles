@@ -78,9 +78,15 @@ pyctags() {
     _gitdir=`git rev-parse --show-toplevel`
     [ $? -ne 0 ] && echo "Must be a git repo." && return 1
     echo Generating python ctags for "$_gitdir"
-    pushd "$_gitdir"
-    ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./.tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
-    popd
+    (cd "$_gitdir" && ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./.tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))") )
+}
+
+cppctags () {
+    local _gitdir
+    _gitdir=`git rev-parse --show-toplevel`
+    [ $? -ne 0 ] && echo "Must be a git repo." && return 1
+    echo Generating C++ ctags for "$_gitdir"
+    (cd "$_gitdir" && ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ./.tags /usr/include . )
 }
 
 if [ "Darwin" = `uname` ]; then
