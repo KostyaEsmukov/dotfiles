@@ -68,13 +68,10 @@
     	path = dotfiles/gitconfig
     EOF
 
-## Ack
+## Symlinks
 
     ln -s ~/dotfiles/ackrc ~/.ackrc
-
-## Flake8
-
     ln -s ~/dotfiles/flake8 ~/.config/flake8
     ln -s ~/dotfiles/isort.cfg ~/.isort.cfg
     ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
-
+    ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
