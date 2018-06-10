@@ -59,6 +59,18 @@ mdcd() {
     cd "$@"
 }
 
+le() {
+    # Convenient wrapper for `less`.
+    # Usage:
+    # le some-file  # equals to `less some-file`
+    # le whois some-ip  # equals to `whois some-ip | less`
+    if [[ -r "$@" ]]; then
+        less "$@"
+    else
+        $@ | less
+    fi
+}
+
 wgen() {
     # Generates 5 random words
     # https://blogs.warwick.ac.uk/mikewillis/entry/random_words/
