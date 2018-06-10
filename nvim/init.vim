@@ -32,9 +32,9 @@ Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
 Plug 'tpope/vim-commentary' " block comment
 Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
+Plug 'MattesGroeger/vim-bookmarks'  " toggle line bookmarks. mm - toggle.
 
 " TODO:
-"??? Plug 'alfredodeza/coveragepy.vim'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'tmhedberg/SimpylFold'
 "nnoremap <space> za
@@ -153,6 +153,35 @@ let $FZF_DEFAULT_COMMAND= 'ag -g ""' " ignore files listed in .gitignore
 "## vim-gitgutter
 set updatetime=250 " reduce update delay
 let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
+
+"## vim-bookmark
+
+" Fix conflicts with NERDTree
+let g:bookmark_no_default_key_mappings = 1
+function! BookmarkMapKeys()
+    nmap mm :BookmarkToggle<CR>
+    nmap mi :BookmarkAnnotate<CR>
+    nmap mn :BookmarkNext<CR>
+    nmap mp :BookmarkPrev<CR>
+    nmap ma :BookmarkShowAll<CR>
+    nmap mc :BookmarkClear<CR>
+    nmap mx :BookmarkClearAll<CR>
+    nmap mkk :BookmarkMoveUp
+    nmap mjj :BookmarkMoveDown
+endfunction
+function! BookmarkUnmapKeys()
+    unmap mm
+    unmap mi
+    unmap mn
+    unmap mp
+    unmap ma
+    unmap mc
+    unmap mx
+    unmap mkk
+    unmap mjj
+endfunction
+autocmd BufEnter * :call BookmarkMapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 "# Trim trailing whitespaces
 " http://vi.stackexchange.com/a/456
