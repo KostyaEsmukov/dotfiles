@@ -75,3 +75,4 @@
     ln -s ~/dotfiles/isort.cfg ~/.isort.cfg
     ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
     ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/dotfiles/tigrc ~/.tigrc
