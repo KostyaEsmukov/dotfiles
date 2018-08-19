@@ -225,6 +225,10 @@ let g:ale_fixers = {
 
 nmap <F8> <Plug>(ale_fix)
 
+"# g++
+
+map <F9> :w <CR> :!g++ % -o %< -std=c++14 <CR>
+
 "# editorconfig
 
 let g:EditorConfig_disable_rules = ['max_line_length']
