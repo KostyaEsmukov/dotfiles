@@ -5,6 +5,18 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
 
+# Less pager
+export LESS="--RAW-CONTROL-CHARS --IGNORE-CASE"
+
+# Wine: disable file associations
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
+
+# Delegate workon/mkvirtualenv to pyenv.
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+# I don't remember why
+# export FZF_DEFAULT_COMMAND='ag -g ""'
+
 alias df='df -h'
 alias wget='wget --trust-server-names --restrict-file-names=unix --tries=3'
 alias du='du -h'
@@ -29,26 +41,14 @@ alias py="python"
 alias py2="python2"
 alias py3="python3"
 
-alias jpegprogressive='jpegtran -copy none -optimize -progressive'
+# jpegprogressive_moz landing-header.jpg > landing-header.jpg_
+alias jpegprogressive_moz='jpegtran -copy none -optimize -progressive'
+
+# The commands below edit images in-place and accept multiple args.
+alias jpegprogressive='jpegoptim --all-progressive --force --strip-all'
 alias stripexif='exiftool -all= '
+# See also: mogrify -resize 1024x *
 
-
-mntfs() {
-    local _DISK=$1
-    local _DEST=$2
-    local _NAME=$3
-    mkdir -p "$_DEST"
-    sudo ntfs-3g -o uid=`id -u` -o gid=0 "$_DISK" "$_DEST" -o volname="$_NAME" -o nobrowse
-}
-
-msshfs() {
-    local _N=$1
-    shift
-    local _D=$1
-    shift
-    mkdir -p "$_D"
-    sshfs $@ "$_D" -o uid=`id -u` -o gid=0 -o volname="$_N" -o no_readahead,noappledouble,nolocalcaches,reconnect
-}
 
 pkcopy() {
     pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
@@ -65,6 +65,7 @@ le() {
     # le some-file  # equals to `less some-file`
     # le whois some-ip  # equals to `whois some-ip | less`
     if [[ -r "$@" ]]; then
+        # This is a readable file.
         less "$@"
     else
         $@ | less
@@ -108,6 +109,9 @@ if [ "Darwin" = `uname` ]; then
     activate_conda() {
         export PATH=/Users/kostya/miniconda3/bin:/anaconda3/bin:$PATH
     }
+
+    # Include manpages from brew
+    export MANPATH=/opt/local/share/man:/usr/local/man:/usr/local/share/man:$MANPATH
 
     xcode-select --install >/dev/null 2>&1 || true
 fi
