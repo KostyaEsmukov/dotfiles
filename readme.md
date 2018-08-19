@@ -20,6 +20,7 @@
     # Re-create the shell session
     ~/dotfiles/scripts/install_pyenv.sh
     # Re-create the shell session
+    ~/dotfiles/scripts/install_git_ssh.sh
     ~/dotfiles/scripts/pullup_nvim.sh
 
     # VM preferences

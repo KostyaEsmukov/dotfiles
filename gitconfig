@@ -1,7 +1,69 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+
+	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+	trustctime = false
+
+[color]
+	ui = auto
+
+[fetch]
+	prune = true
+
+[alias]
+	a = add
+	aa = add --all .
+	ai = add --patch --all .
+	b = checkout -b
+	c = commit
+	ca = commit --amend
+	co = checkout
+	cp = cherry-pick
+	ds = difftool --dir-diff --staged
+	du = difftool --dir-diff
+	f = fetch
+	l = log
+	lg = log --color --graph --pretty=format:'%Cgreen%h%Creset %C(yellow)(%cd)%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Creset'
+	lga = !git lg --all
+	m = merge
+	p = push
+	pf = push --force
+	pu = pull
+	pur = pull --rebase=preserve
+	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
+	ri = rebase -i
+	s = status
+	sh = show
+
+	aliases = config --get-regexp alias
+	contributors = shortlog --summary --numbered
+	credit = commit --amend --author
+	stash-all = stash push --include-untracked
+	stash-keep = !git stash-all --keep-index
+
+[diff]
+	tool = icdiff
+
+[difftool]
+
+[difftool "icdiff"]
+	; https://github.com/jeffkaufman/icdiff
+	cmd = icdiff --line-numbers --recursive $LOCAL $REMOTE | less -R
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
 [user]
 	name = Kostya Esmukov
 	email = kostya@esmukov.ru
 	signingkey = 2D3B9C1712FF84F7
+
 [commit]
 	gpgsign = true
 
