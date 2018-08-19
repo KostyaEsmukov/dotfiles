@@ -11,7 +11,11 @@
     ~/dotfiles/scripts/install_zsh.sh
     ~/dotfiles/scripts/pullup_links.sh
     ~/dotfiles/scripts/pullup_vim.sh
+    ~/dotfiles/scripts/install_docker.sh
 
+    # GUI apps
+    ~/dotfiles/scripts/install_apps.sh
+    ~/dotfiles/scripts/install_spotify.sh
 
     # Re-create the shell session
     ~/dotfiles/scripts/pullup_nvim.sh
