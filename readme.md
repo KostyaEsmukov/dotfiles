@@ -18,6 +18,8 @@
     ~/dotfiles/scripts/install_spotify.sh
 
     # Re-create the shell session
+    ~/dotfiles/scripts/install_pyenv.sh
+    # Re-create the shell session
     ~/dotfiles/scripts/pullup_nvim.sh
 
     # VM preferences
