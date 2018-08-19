@@ -26,4 +26,6 @@
     # VM preferences
     ~/dotfiles/scripts/pullup_macos_defaults.sh
 
+    ~/dotfiles/scripts/pullup_gnome.sh
+    ~/dotfiles/scripts/pullup_gnome_dconf.sh
 
