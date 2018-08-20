@@ -2,10 +2,15 @@
 call plug#begin()
 
 "## IDE-alike
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
 Plug 'w0rp/ale' " linter
 Plug 'alfredodeza/coveragepy.vim'  " coverage.py integration. :Coveragepy show
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree'
@@ -222,6 +227,20 @@ let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plu
 let g:ale_fixers = {
 \    'python': ['black', 'isort'],
 \}
+
+"# Language Server
+
+"## enable auto-complete
+let g:deoplete#enable_at_startup = 1
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 nmap <F8> <Plug>(ale_fix)
 
