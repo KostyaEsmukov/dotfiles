@@ -25,10 +25,9 @@ elif which dnf; then
         ImageMagick
 
     sudo dnf install fzf
-
     # TODO (?) is installation required?
 
-    sudo usermod -s /usr/bin/zsh `whoami`
+    sudo usermod -s `which zsh` `whoami`
 elif which apt; then
 
     sudo apt install zsh \
@@ -41,7 +40,7 @@ elif which apt; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
 
-    sudo usermod -s /usr/bin/zsh `whoami`
+    sudo usermod -s `which zsh` `whoami`
 else
     echo "Unsupported OS"
     exit 1
