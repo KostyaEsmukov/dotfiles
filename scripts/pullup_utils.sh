@@ -17,7 +17,7 @@ if which brew; then
         tmux tig \
         jq \
         rsync nmap telnet tree unzip \
-        gawk gnu-sed gnu-tar mda5sha1sum
+        gawk gnu-sed gnu-tar md5sha1sum
 
 elif which dnf; then
 

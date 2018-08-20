@@ -54,6 +54,8 @@ if which brew; then
 export CFLAGS="${CFLAGS} -I$(brew --prefix openssl@1.1)/include"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl@1.1)/lib"
 
+export PATH="${HOME}/Library/Python/3.7/bin:$PATH"
+
 EOF
 fi
 

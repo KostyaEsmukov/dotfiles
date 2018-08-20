@@ -35,13 +35,13 @@ pip3 install --user --upgrade \
     flake8 pylint \
     isort flake8-isort
 
-pyenv shell `pyenv versions | grep -P '^\s*2\.7' | tail -1`
+pyenv shell `pyenv versions | egrep '^\s*2\.7' | tail -1`
 rmvirtualenv neovim_py2
 mkvirtualenv neovim_py2
 pip install --upgrade neovim
 deactivate
 
-pyenv shell `pyenv versions | grep -P '^\s*3\.7' | tail -1`
+pyenv shell `pyenv versions | egrep '^\s*3\.7' | tail -1`
 rmvirtualenv neovim_py3
 mkvirtualenv neovim_py3
 pip install --upgrade neovim
