@@ -233,6 +233,8 @@ let g:ale_fixers = {
 "## enable auto-complete
 let g:deoplete#enable_at_startup = 1
 
+let g:LanguageClient_diagnosticsList = 'Disabled'
+
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ }
@@ -257,7 +259,7 @@ let g:EditorConfig_disable_rules = ['max_line_length']
 set tags=.tags
 " Run `pyctags` to regenerate ctags (defined in the zshrc).
 
-" C-] -- navigate to definition. 
+" C-] -- navigate to definition.
 " C-o -- go back.
 " g] -- list definitions.
 
