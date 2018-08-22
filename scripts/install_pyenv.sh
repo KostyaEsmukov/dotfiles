@@ -61,7 +61,9 @@ fi
 
 
 # Running in zsh, which would correctly init pyenv using the code above
-cat | zsh -i << 'EOF'
+cat | zsh -ls << 'EOF' || true
+source ~/.zshrc
+deactivate
 
 # Apparently installing the latest available Python version
 # with pyenv is considered a rocket-science.

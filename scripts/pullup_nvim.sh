@@ -68,9 +68,11 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubuserc
 curl -fLo ~/.config/nvim/colors/kalisi.vim --create-dirs https://raw.githubusercontent.com/freeo/vim-kalisi/master/colors/kalisi.vim
 
 if which brew; then
-    pushd ~/Library/Fonts/
+    mkdir -p ~/Library/Fonts/
+    pushd $_
 elif which dnf; then
-    pushd ~/.local/share/fonts/
+    mkdir -p ~/.local/share/fonts/
+    pushd $_
 fi
 
 if [ ! -r "Cousine Regular Nerd Font Complete.ttf" ]; then

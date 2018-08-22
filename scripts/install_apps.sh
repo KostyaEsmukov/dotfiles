@@ -41,6 +41,9 @@ elif which dnf; then
     sudo systemctl start postgresql
     sudo systemctl enable postgresql
 
+    # For VLC and VirtualBox
+    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
     sudo dnf install \
         VirtualBox \
         wireshark
@@ -52,7 +55,6 @@ elif which dnf; then
 
     # VLC also installs a bunch of codecs, used by browsers for playing html5 videos.
     # https://www.videolan.org/vlc/download-fedora.html
-    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     sudo dnf install vlc
 
 else
