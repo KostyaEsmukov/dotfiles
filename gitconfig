@@ -16,12 +16,13 @@
 	aa = add --all .
 	ai = add --patch --all .
 	b = checkout -b
+	br = branch
 	c = commit
 	ca = commit --amend
 	co = checkout
 	cp = cherry-pick
-	ds = difftool --dir-diff --staged
-	du = difftool --dir-diff
+	d = diff
+	ds = diff --cached
 	f = fetch
 	l = log
 	lg = log --color --graph --pretty=format:'%Cgreen%h%Creset %C(yellow)(%cd)%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Creset'
@@ -34,6 +35,7 @@
 	r = rebase
 	ra = rebase --abort
 	rc = rebase --continue
+	rh = reset --hard
 	ri = rebase -i
 	s = status
 	sh = show
@@ -43,15 +45,6 @@
 	credit = commit --amend --author
 	stash-all = stash push --include-untracked
 	stash-keep = !git stash-all --keep-index
-
-[diff]
-	tool = icdiff
-
-[difftool]
-
-[difftool "icdiff"]
-	; https://github.com/jeffkaufman/icdiff
-	cmd = icdiff --line-numbers --recursive $LOCAL $REMOTE | less -R
 
 [filter "lfs"]
 	required = true

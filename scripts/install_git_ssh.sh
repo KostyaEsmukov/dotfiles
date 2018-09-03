@@ -23,14 +23,4 @@ cat >> ~/.gitconfig <<EOF
     path = dotfiles/gitconfig
 EOF
 
-# zsh correctly initializes pyenv
-cat | zsh -ls << 'EOF' || true
-source ~/.zshrc
-deactivate
-
-pyenv shell system
-pip3 install --user --upgrade \
-    https://github.com/jeffkaufman/icdiff/archive/master.tar.gz
-EOF
-
 echo "Don't forget to get your SSH and GPG keys!"
