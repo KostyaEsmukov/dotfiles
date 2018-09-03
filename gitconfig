@@ -15,7 +15,7 @@
 	a = add
 	aa = add --all .
 	ai = add --patch --all .
-	b = checkout -b
+	b = checkout --track
 	br = branch
 	c = commit
 	ca = commit --amend
@@ -28,7 +28,7 @@
 	lg = log --color --graph --pretty=format:'%Cgreen%h%Creset %C(yellow)(%cd)%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Creset'
 	lga = !git lg --all
 	m = merge
-	p = push
+	p = push -u
 	pf = push --force
 	pu = pull
 	pur = pull --rebase=preserve
