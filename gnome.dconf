@@ -96,7 +96,7 @@ report-technical-problems=true
 button-layout='close,minimize,maximize:appmenu'
 
 [org/gnome/desktop/input-sources]
-xkb-options=['grp:caps_toggle']
+xkb-options=['grp:caps_toggle', 'compose:menu']
 
 [org/gnome/evolution/plugin/prefer-plain]
 show-suppressed=true
