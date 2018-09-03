@@ -35,7 +35,7 @@ Plug 'iamcco/markdown-preview.vim'
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
-Plug 'tpope/vim-commentary' " block comment
+Plug 'tpope/vim-commentary' " gc (in visual) - block comment
 Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
 Plug 'MattesGroeger/vim-bookmarks'  " toggle line bookmarks. mm - toggle.
 
@@ -85,6 +85,9 @@ autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. B
 " https://askubuntu.com/a/825599
 "autocmd CursorHold,CursorHoldI * call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd p
 
+" Show relative line numbers in a focused buffer
+autocmd WinEnter,FocusGained * :setlocal number relativenumber
+autocmd WinLeave,FocusLost   * :setlocal number norelativenumber
 
 "# editor
 set cursorcolumn cursorline " show cursor position in a cross-like fashion
