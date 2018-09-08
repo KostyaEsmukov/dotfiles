@@ -54,19 +54,16 @@ nnoremap ; :
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
 
-"## terminal
-" tnoremap <Esc> <c-\><c-n>
-
-"## line swaps
-" map <D-Up> kddpk
-" map <D-Down> ddp
-
 "## delete w/o copying. leader is \.
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 "## replace selection with the register contents
 vnoremap <leader>p "_c<esc>p
+
+"## copy the current relative path to clipboard
+
+nmap cp :let @+ = expand("%")<cr>
 
 "# colors
 colorscheme kalisi
