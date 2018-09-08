@@ -24,6 +24,7 @@ Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
+Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 
 "## powerline
 Plug 'vim-airline/vim-airline'
@@ -60,6 +61,12 @@ vnoremap <leader>d "_d
 
 "## replace selection with the register contents
 vnoremap <leader>p "_c<esc>p
+
+"## show buffers (like Ctrl+E in Intellij)
+
+" https://vi.stackexchange.com/a/2187
+" nnoremap <C-e> :set nomore <Bar> :ls <Bar> :set more <CR>:b<Space>
+nnoremap <C-e> :CtrlPBuffer<CR>
 
 "## copy the current relative path to clipboard
 
