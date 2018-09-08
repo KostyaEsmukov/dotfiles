@@ -17,7 +17,6 @@ elif which dnf; then
     sudo dnf install \
         python3-virtualenvwrapper python2-virtualenvwrapper \
         python3 \
-        ## compat-openssl10-devel \
         zlib-devel bzip2 bzip2-devel readline-devel \
         sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel
 
