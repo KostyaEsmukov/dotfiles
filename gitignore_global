@@ -5,3 +5,6 @@
 .idea
 .tags
 .mypy_cache
+
+.python-version
+
