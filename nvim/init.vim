@@ -40,6 +40,9 @@ Plug 'tpope/vim-commentary' " gc (in visual) - block comment
 Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
 Plug 'MattesGroeger/vim-bookmarks'  " toggle line bookmarks. mm - toggle.
 
+let g:swap_no_default_key_mappings = 1  " gs -- conflicts with vim-sort-motion
+Plug 'machakann/vim-swap'  " swap comma-delimited items with >,
+
 " TODO:
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'tmhedberg/SimpylFold'
@@ -71,6 +74,11 @@ nnoremap <C-e> :CtrlPBuffer<CR>
 "## copy the current relative path to clipboard
 
 nmap cp :let @+ = expand("%")<cr>
+
+"## arguments swap
+
+nmap <, <Plug>(swap-prev)
+nmap >, <Plug>(swap-next)
 
 "# colors
 colorscheme kalisi
