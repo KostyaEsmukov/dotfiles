@@ -36,7 +36,8 @@ pip3 install --user --upgrade \
     isort flake8-isort \
     python-language-server'[all]' \
     pyls-black pyls-isort pyls-mypy \
-    coverage
+    coverage \
+    tox
 
 pyenv shell `pyenv versions | egrep '^\s*2\.7' | tail -1`
 rmvirtualenv neovim_py2
