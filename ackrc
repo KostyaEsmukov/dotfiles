@@ -8,6 +8,10 @@
 --ignore-dir=dist
 --ignore-dir=node_modules/
 --ignore-dir=venv
+
+--ignore-dir=match:.*\.egg-info
+
 --ignore-file=is:.tags
 --ignore-file=is:.coverage
 
+--sort-files
