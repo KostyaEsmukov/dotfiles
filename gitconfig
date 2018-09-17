@@ -14,24 +14,23 @@
 [alias]
 	a = add
 	aa = add --all .
-	ai = add --patch --all .
 	b = checkout --track
 	br = branch
 	c = commit
 	ca = commit --amend
 	co = checkout
 	cp = cherry-pick
+	cpc = cherry-pick --continue
+	cpn = cherry-pick --no-commit
 	d = diff
 	ds = diff --cached
 	f = fetch
-	l = log
+	l = pull
 	lg = log --color --graph --pretty=format:'%Cgreen%h%Creset %C(yellow)(%cd)%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Creset'
 	lga = !git lg --all
-	m = merge
+	lr = pull --rebase=preserve
 	p = push -u
 	pf = push --force
-	pu = pull
-	pur = pull --rebase=preserve
 	r = rebase
 	ra = rebase --abort
 	rc = rebase --continue
@@ -39,6 +38,7 @@
 	ri = rebase -i
 	s = status
 	sh = show
+	ss = stash
 
 	aliases = config --get-regexp alias
 	contributors = shortlog --summary --numbered
