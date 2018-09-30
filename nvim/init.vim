@@ -167,7 +167,10 @@ let g:airline_section_b = ''  " Hide git status
 map <C-n> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif " http://superuser.com/a/474298
-let NERDTreeIgnore=['\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$']
+let NERDTreeIgnore=[
+            \ '\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$', '\.git$',
+            \ '^\.pytest_cache$', '^\.mypy_cache$', '^\.coverage$', '^\.idea$',
+            \ ]
 let NERDTreeShowHidden=1
 
 " open nerdtree when vim is started without a file
