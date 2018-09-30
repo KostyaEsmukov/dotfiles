@@ -196,6 +196,11 @@ let $FZF_DEFAULT_COMMAND= 'ag -g ""' " ignore files listed in .gitignore
 set updatetime=250 " reduce update delay
 let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
 
+"## vim-fugitive
+
+" \ga to stage the current file
+map <leader>ga :Gwrite<CR>
+
 "## vim-bookmark
 
 " Fix conflicts with NERDTree
