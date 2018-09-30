@@ -267,6 +267,11 @@ let g:ale_fixers = {
 "## enable auto-complete
 let g:deoplete#enable_at_startup = 1
 
+" Attempt to fix the annoying change in the completion list after the
+" delayed response from the LS.
+" See https://github.com/autozimu/LanguageClient-neovim/issues/609
+call deoplete#custom#option('auto_complete_delay', 200)
+
 let g:LanguageClient_diagnosticsList = 'Disabled'
 
 let g:LanguageClient_serverCommands = {
