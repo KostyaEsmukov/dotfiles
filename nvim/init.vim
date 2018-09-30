@@ -11,6 +11,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree'
