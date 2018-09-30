@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
+Plug 'KostyaEsmukov/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
 
 "## powerline
 Plug 'vim-airline/vim-airline'
@@ -268,6 +269,10 @@ map <F9> :w <CR> :!g++ % -o %< -std=c++14 <CR>
 "# editorconfig
 
 let g:EditorConfig_disable_rules = ['max_line_length']
+
+"# vim-gh-line
+
+let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
 
 "# ctags
 
