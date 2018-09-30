@@ -66,6 +66,9 @@ vnoremap <leader>d "_d
 "## replace selection with the register contents
 vnoremap <leader>p "_c<esc>p
 
+"## yank the word under the cursor
+nnoremap <leader>y yiw
+
 "## show buffers (like Ctrl+E in Intellij)
 
 " https://vi.stackexchange.com/a/2187
