@@ -81,13 +81,30 @@ nmap cp :let @+ = expand("%")<cr>
 nmap <, <Plug>(swap-prev)
 nmap >, <Plug>(swap-next)
 
+"## Close quickfix easily
+nnoremap <leader>a :cclose<CR>
+"## Close preview easily
+nnoremap <leader>z :pclose<CR>
+
+"## Remove search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+"## Fast saving
+nmap <leader>w :wa!<cr>
+
+"## Fast exit
+nmap <leader>q :wqa<cr>
+
+"## Center the screen
+nnoremap <space> zz
+
 "# colors
 colorscheme kalisi
 set background=dark
 
 "# autosave changes
 " http://vim.wikia.com/wiki/Auto_save_files_when_focus_is_lost
-:autocmd FocusLost * silent! wa  " untitled buffers are silently ignored
+autocmd FocusLost * silent! wa  " untitled buffers are silently ignored
 set autowriteall
 
 "# autoreload changed files
@@ -151,6 +168,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif " http://superuser.com/a/474298
 let NERDTreeIgnore=['\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$']
+let NERDTreeShowHidden=1
 
 " open nerdtree when vim is started without a file
 autocmd StdinReadPre * let s:std_in=1
