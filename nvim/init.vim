@@ -268,6 +268,10 @@ let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 
+" Fix an issue with sql files:
+" SQLComplete: The debxt plugin must be loaded for dynamic SQL completion
+let g:omni_sql_no_default_maps = 1
+
 "# ALE
 
 let g:ale_fixers = {
