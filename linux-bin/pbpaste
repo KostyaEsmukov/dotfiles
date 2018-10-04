@@ -1,0 +1,2 @@
+#!/bin/sh
+xsel --clipboard --output
