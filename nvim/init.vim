@@ -26,7 +26,7 @@ Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
-Plug 'KostyaEsmukov/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
+Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
 
 "## powerline
 Plug 'vim-airline/vim-airline'
