@@ -27,7 +27,7 @@ alias scp='\scp -p'
 
 alias rmr='\rm -fR'
 alias cpa='\cp -ai'
-alias rmr='\rm -R'
+alias rmr='\rm -Rf'
 alias du1='\du -ch -d 1'
 
 alias pk='cat ~/.ssh/id_rsa.pub'
