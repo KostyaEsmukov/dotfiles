@@ -140,6 +140,8 @@ set tabstop=4           " Render TABs using this many spaces.
 set shiftwidth=4        " Indentation amount for < and > commands.
 set nowrap
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Enable mouse integration
 set mouse=a
 
