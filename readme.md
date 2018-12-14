@@ -16,7 +16,6 @@
 
     # GUI apps
     ~/dotfiles/scripts/install_apps.sh
-    ~/dotfiles/scripts/install_spotify.sh
 
     # Re-create the shell session
     ~/dotfiles/scripts/install_pyenv.sh
