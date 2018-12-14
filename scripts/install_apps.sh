@@ -28,13 +28,13 @@ elif which dnf; then
     sudo dnf install \
         chromium \
         keepassx \
-        tilix \
-        gitg
+        tilix
 
     # https://www.sublimetext.com/docs/3/linux_repositories.html#dnf
     sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
     sudo dnf install sublime-text
+    sudo dnf install sublime-merge
 
     sudo dnf install postgresql-server postgresql-contrib
     sudo postgresql-setup --initdb --unit postgresql
