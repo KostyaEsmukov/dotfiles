@@ -2,7 +2,6 @@
 call plug#begin()
 
 "## IDE-alike
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
 Plug 'w0rp/ale' " linter
 Plug 'alfredodeza/coveragepy.vim'  " coverage.py integration. :Coveragepy show
@@ -16,7 +15,6 @@ Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree', { 'commit': '8d005db' }
 Plug 'ryanoasis/vim-devicons' " file icons
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'Aldlevine/nerdtree-git-plugin' " fork of the above, which colors whole line.  https://github.com/Xuyuanp/nerdtree-git-plugin/pull/79
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
@@ -44,11 +42,6 @@ Plug 'MattesGroeger/vim-bookmarks'  " toggle line bookmarks. mm - toggle.
 
 let g:swap_no_default_key_mappings = 1  " gs -- conflicts with vim-sort-motion
 Plug 'machakann/vim-swap'  " swap comma-delimited items with >,
-
-" TODO:
-"Plug 'vim-scripts/indentpython.vim'
-"Plug 'tmhedberg/SimpylFold'
-"nnoremap <space> za
 
 call plug#end()
 
@@ -175,7 +168,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif " http://superuser.com/a/474298
 let NERDTreeIgnore=[
-            \ '\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$', '\.git$',
+            \ '\.pyc$', '\~$', '^__pycache__$', '^\.DS_Store$', '\.swp$', '^\.git$',
             \ '^\.pytest_cache$', '^\.mypy_cache$', '^\.coverage$', '^\.idea$',
             \ ]
 let NERDTreeShowHidden=1
