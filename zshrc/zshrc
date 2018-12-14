@@ -103,6 +103,13 @@ cppctags () {
     (cd "$_gitdir" && ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ./.tags /usr/include . )
 }
 
+rsync_watch() {
+    rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+    while inotifywait -r -e modify,create,delete "$1"; do
+        rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+    done
+}
+
 if [ "Darwin" = `uname` ]; then
     alias finder='open .'
     alias ldd='otool -L'
