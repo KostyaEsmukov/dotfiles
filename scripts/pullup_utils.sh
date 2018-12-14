@@ -14,7 +14,7 @@ if which brew; then
     brew install \
         htop ack pwgen \
         git ncdu httpie \
-        tmux tig \
+        tmux \
         jq \
         rsync nmap telnet tree unzip \
         gawk gnu-sed gnu-tar md5sha1sum
@@ -24,7 +24,7 @@ elif which dnf; then
     sudo dnf install \
         htop ack pwgen \
         git ncdu httpie \
-        tmux tig \
+        tmux \
         jq \
         rsync nmap telnet tree unzip
 
@@ -34,7 +34,7 @@ elif which apt; then
     sudo apt install \
         htop ack-grep pwgen \
         git ncdu httpie \
-        tmux tig \
+        tmux \
         jq \
         rsync nmap telnet tree unzip
 
