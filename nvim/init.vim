@@ -13,7 +13,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 
 "## Files navigation + VCS
-Plug 'scrooloose/nerdtree', { 'commit': '8d005db' }
+Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
 " Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'Aldlevine/nerdtree-git-plugin' " fork of the above, which colors whole line.  https://github.com/Xuyuanp/nerdtree-git-plugin/pull/79
@@ -180,6 +180,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Enable folder icons in NerdTree
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+
+" Fix nerdtree + devicons regression:
+" see https://github.com/ryanoasis/vim-devicons/issues/250
+highlight link NERDTreeFlags NERDTreeDir
 
 let g:NERDTreeGitStatusNodeColorization = 1  "enables colorization
 let g:NERDTreeGitStatusWithFlags = 1  "enables flags, (may be default), required for colorization
