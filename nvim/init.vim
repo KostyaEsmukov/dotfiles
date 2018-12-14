@@ -14,7 +14,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 
 "## Files navigation + VCS
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'commit': '8d005db' }
 Plug 'ryanoasis/vim-devicons' " file icons
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
