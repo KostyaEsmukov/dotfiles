@@ -16,6 +16,7 @@
 	aa = add --all .
 	b = checkout --track
 	br = branch
+	brb = !git branch backup/`date +%Y-%m-%dT%H.%M.%S`
 	c = commit
 	ca = commit --amend
 	co = checkout
