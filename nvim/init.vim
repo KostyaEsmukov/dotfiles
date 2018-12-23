@@ -17,7 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
 " Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'Aldlevine/nerdtree-git-plugin' " fork of the above, which colors whole line.  https://github.com/Xuyuanp/nerdtree-git-plugin/pull/79
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " see also: kien/ctrlp.vim
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
@@ -25,6 +25,7 @@ Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
+Plug 'Olical/vim-enmasse' " edit via quickfix. :EnMasse
 
 "## powerline
 Plug 'vim-airline/vim-airline'
@@ -32,6 +33,9 @@ Plug 'vim-airline/vim-airline-themes'
 
 "## markdown
 Plug 'iamcco/markdown-preview.vim'
+
+"## GUI
+Plug 'wincent/terminus' " improve integration with GUI
 
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
@@ -46,7 +50,6 @@ Plug 'machakann/vim-swap'  " swap comma-delimited items with >,
 call plug#end()
 
 "# remaps
-" noremap <space> :
 nnoremap ; :
 
 "## window cycling
@@ -180,6 +183,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Enable folder icons in NerdTree
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+
+" Reduce indentation
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
 
 " Fix nerdtree + devicons regression:
 " see https://github.com/ryanoasis/vim-devicons/issues/250
