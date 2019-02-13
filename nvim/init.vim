@@ -21,7 +21,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
-Plug 'dkprice/vim-easygrep' " \vV - search word under cursor
 Plug 'mileszs/ack.vim' " search with ack
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
@@ -34,15 +33,11 @@ Plug 'vim-airline/vim-airline-themes'
 "## markdown
 Plug 'iamcco/markdown-preview.vim'
 
-"## GUI
-Plug 'wincent/terminus' " improve integration with GUI
-
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
 Plug 'tpope/vim-commentary' " gc (in visual) - block comment
 Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
-Plug 'MattesGroeger/vim-bookmarks'  " toggle line bookmarks. mm - toggle.
 
 let g:swap_no_default_key_mappings = 1  " gs -- conflicts with vim-sort-motion
 Plug 'machakann/vim-swap'  " swap comma-delimited items with >,
@@ -210,35 +205,6 @@ let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
 
 " \ga to stage the current file
 map <leader>ga :Gwrite<CR>
-
-"## vim-bookmark
-
-" Fix conflicts with NERDTree
-let g:bookmark_no_default_key_mappings = 1
-function! BookmarkMapKeys()
-    nmap mm :BookmarkToggle<CR>
-    nmap mi :BookmarkAnnotate<CR>
-    nmap mn :BookmarkNext<CR>
-    nmap mp :BookmarkPrev<CR>
-    nmap ma :BookmarkShowAll<CR>
-    nmap mc :BookmarkClear<CR>
-    nmap mx :BookmarkClearAll<CR>
-    nmap mkk :BookmarkMoveUp
-    nmap mjj :BookmarkMoveDown
-endfunction
-function! BookmarkUnmapKeys()
-    unmap mm
-    unmap mi
-    unmap mn
-    unmap mp
-    unmap ma
-    unmap mc
-    unmap mx
-    unmap mkk
-    unmap mjj
-endfunction
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 "# Trim trailing whitespaces
 " http://vi.stackexchange.com/a/456
