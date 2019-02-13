@@ -62,6 +62,7 @@ elif which dnf; then
     sudo gem install neovim
 fi
 
+npm i -g javascript-typescript-langserver
 
 rm -Rf ~/.config/nvim/
 mkdir -p ~/.config/nvim/
