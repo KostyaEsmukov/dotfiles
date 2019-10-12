@@ -136,6 +136,7 @@ set scrolloff=2         " Keep some lines visible when scrolling
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType go setlocal noexpandtab
+autocmd FileType make setlocal noexpandtab
 
 " Enable mouse integration
 set mouse=a
