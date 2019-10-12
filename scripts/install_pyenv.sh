@@ -50,8 +50,8 @@ EOF
 if which brew; then
     cat >> ~/.zshrc << 'EOF'
 
-export CFLAGS="${CFLAGS} -I$(brew --prefix openssl@1.1)/include"
-export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl@1.1)/lib"
+export CFLAGS="${CFLAGS} -I$(brew --prefix readline)/include -I$(brew --prefix openssl@1.1)/include"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix readline)/lib -L$(brew --prefix openssl@1.1)/lib"
 
 export PATH="${HOME}/Library/Python/3.7/bin:$PATH"
 
@@ -68,21 +68,22 @@ deactivate
 # with pyenv is considered a rocket-science.
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
+pyenv install 3.9-dev
 pyenv install 3.8-dev
-pyenv install 3.7.0
-pyenv install 3.6.6
-pyenv install 3.5.6
+pyenv install 3.7.4
+pyenv install 3.6.9
+pyenv install 3.5.7
 
-pyenv install pypy3.5-6.0.0
-pyenv install pypy2.7-6.0.0
+pyenv install pypy3.6-7.1.1
+pyenv install pypy2.7-7.1.1
 
 
 # Install openssl 1.0
 # https://github.com/pyenv/pyenv/issues/945#issuecomment-317389780
 if which brew; then
 
-export CFLAGS="-I$(brew --prefix openssl)/include"
-export LDFLAGS="-L$(brew --prefix openssl)/lib"
+export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
+export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 
 elif which dnf; then
 
@@ -91,9 +92,9 @@ sudo dnf install compat-openssl10-devel
 
 fi
 
-pyenv install 3.4.0
+pyenv install 3.4.10
 # 2.7[.0] segfaults on Fedora during installation
-pyenv install 2.7.15
+pyenv install 2.7.16
 
 if which dnf; then
 
