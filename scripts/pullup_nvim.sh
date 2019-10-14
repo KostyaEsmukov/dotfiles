@@ -51,18 +51,20 @@ mkvirtualenv neovim_py3
 pip install --upgrade neovim
 deactivate
 
+echo press enter
 EOF
 
 
 if which brew; then
     npm install -g neovim
     gem install neovim
+    npm install -g javascript-typescript-langserver
 elif which dnf; then
     sudo npm install -g neovim
     sudo gem install neovim
+    sudo npm install -g javascript-typescript-langserver
 fi
 
-npm i -g javascript-typescript-langserver
 
 rm -Rf ~/.config/nvim/
 mkdir -p ~/.config/nvim/
