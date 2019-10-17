@@ -69,7 +69,7 @@ deactivate
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
 pyenv install 3.9-dev
-pyenv install 3.8-dev
+pyenv install 3.8.0
 pyenv install 3.7.4
 pyenv install 3.6.9
 pyenv install 3.5.7
