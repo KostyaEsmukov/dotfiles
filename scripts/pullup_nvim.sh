@@ -37,7 +37,7 @@ pip3 install --user --upgrade \
     python-language-server'[all]' \
     pyls-black pyls-isort pyls-mypy \
     coverage \
-    tox tox-pyenv
+    tox tox-venv tox-pyenv
 
 pyenv shell `pyenv versions | egrep '^\s*2\.7' | tail -1`
 rmvirtualenv neovim_py2
