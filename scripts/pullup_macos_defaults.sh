@@ -2,6 +2,17 @@
 
 # ~/.macos — https://mths.be/macos
 
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 ########## My custom prefs
 
 
@@ -29,12 +40,28 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-
+# Dock apps:
+# - Finder
+# - Mail
+# - Spotify
+# - Evernote
+# - Onenote
+# - Chrome
+# - Firefox
+# - Keepassx
+# - Sublime Text
+# - iTerm 2
+# - Safari
+# - Telegram
+# - Slack
+# - Fork app
+defaults write com.apple.dock orientation -string left
 defaults write com.apple.dock largesize -int 60
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock tilesize -int 40
 defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock show-process-indicators -bool true
+defaults write com.apple.dock show-recents -bool false
 
 # Hot corners
 # Possible values:
@@ -236,6 +263,19 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 
 # defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+defaults write NSGlobalDomain AppleLanguages -array "en-RU" "ru-RU"
+defaults write NSGlobalDomain AppleLocale -string "en_RU"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+sudo systemsetup -settimezone "Europe/Moscow" > /dev/null
+
+# Enable lid wakeup
+sudo pmset -a lidwake 1
+
+# Sleep the display after 2 minutes
+sudo pmset -a displaysleep 2
 
 
 echo "Please reboot"
