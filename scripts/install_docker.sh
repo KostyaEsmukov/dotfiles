@@ -4,11 +4,7 @@ set -euxo pipefail
 
 if [ "Darwin" = `uname` ]; then
 
-    echo "Opening https://docs.docker.com/docker-for-mac/"
-    open "https://docs.docker.com/docker-for-mac/"
-
-    # I love puns. Especially the bad ones.
-    echo "Install that piece of ship manually."
+    brew cask install docker
 
 elif which dnf; then
 
