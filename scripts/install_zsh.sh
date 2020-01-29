@@ -8,13 +8,13 @@ if which brew; then
         mozjpeg \
         jpegoptim \
         exiftool \
-        imagemagic
-
-    brew install fzf
-    $(brew --prefix)/opt/fzf/install
+        imagemagick
 
     sudo sh -c "echo `which zsh` >> /etc/shells"
     chsh -s `which zsh`
+
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install
 
 elif which dnf; then
 
