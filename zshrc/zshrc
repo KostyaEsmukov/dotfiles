@@ -106,12 +106,21 @@ cppctags () {
     (cd "$_gitdir" && ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ./.tags /usr/include . )
 }
 
+if [ "Darwin" = `uname` ]; then
+rsync_watch() {
+    # brew install fswatch
+    rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+
+    fswatch --recursive --print0 --one-per-batch "$1" | xargs -0 -I{} -n1 rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+}
+else
 rsync_watch() {
     rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
     while inotifywait -r -e modify,create,delete "$1"; do
         rsync -avz --delete --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
     done
 }
+fi
 
 if [ "Darwin" = `uname` ]; then
     alias finder='open .'
