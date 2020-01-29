@@ -16,18 +16,6 @@ if which brew; then
     brew install fzf
     $(brew --prefix)/opt/fzf/install
 
-elif which dnf; then
-
-    sudo dnf install zsh \
-        libjpeg-turbo-utils \
-        jpegoptim \
-        perl-Image-ExifTool \
-        ImageMagick
-
-    sudo dnf install fzf
-    # TODO (?) is installation required?
-
-    sudo usermod -s `which zsh` `whoami`
 elif which apt; then
 
     sudo apt install zsh \

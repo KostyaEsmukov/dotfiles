@@ -7,8 +7,6 @@ set -euxo pipefail
 if which brew; then
     brew install vim
     brew link vim
-elif which dnf; then
-    sudo dnf install vim
 elif which apt; then
     sudo apt install vim
 else

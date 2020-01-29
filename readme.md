@@ -1,4 +1,4 @@
-# dotfiles (MacOS + Fedora gnome)
+# dotfiles (MacOS + Debian headless)
 
     git clone https://github.com/KostyaEsmukov/dotfiles.git ~/dotfiles
     # or
@@ -25,7 +25,3 @@
 
     # VM preferences
     ~/dotfiles/scripts/pullup_macos_defaults.sh
-
-    ~/dotfiles/scripts/pullup_gnome.sh
-    ~/dotfiles/scripts/pullup_gnome_dconf.sh
-

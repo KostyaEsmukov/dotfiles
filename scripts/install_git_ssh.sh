@@ -8,9 +8,6 @@ if which brew; then
     echo "Install GPG Suite manually"
     open "https://gpgtools.org/"
 
-elif which dnf; then
-    sudo dnf install git gpg
-
 else
     echo "Unsupported OS"
     exit 1

@@ -13,22 +13,6 @@ if which brew; then
         openssl openssl@1.1 \
         readline xz
 
-elif which dnf; then
-
-    sudo dnf install \
-        python3-virtualenvwrapper python2-virtualenvwrapper \
-        python3 \
-        zlib-devel bzip2 bzip2-devel readline-devel \
-        sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel
-
-    # https://github.com/pyenv/pyenv-installer
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-
-    export PATH="${HOME}/.pyenv/bin:$PATH"
-
-    # https://github.com/pyenv/pyenv-virtualenvwrapper
-    git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
-
 else
     echo "Unsupported OS"
     exit 1
@@ -86,21 +70,9 @@ if which brew; then
 export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 
-elif which dnf; then
-
-sudo dnf remove openssl-devel
-sudo dnf install compat-openssl10-devel
-
 fi
 
 pyenv install 3.4.10
-# 2.7[.0] segfaults on Fedora during installation
 pyenv install 2.7.16
 
-if which dnf; then
-
-sudo dnf remove compat-openssl10-devel
-sudo dnf install openssl-devel
-
-fi
 EOF

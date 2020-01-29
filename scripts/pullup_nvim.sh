@@ -10,15 +10,6 @@ if which brew; then
         ctags-exuberant \
         gcc
 
-elif which dnf; then
-
-    sudo dnf install neovim \
-        ruby ruby-devel \
-        npm \
-        @development-tools redhat-rpm-config \
-        the_silver_searcher \
-        ctags
-
 else
     echo "Unsupported OS"
     exit 1
@@ -59,10 +50,6 @@ if which brew; then
     npm install -g neovim
     gem install neovim
     npm install -g javascript-typescript-langserver
-elif which dnf; then
-    sudo npm install -g neovim
-    sudo gem install neovim
-    sudo npm install -g javascript-typescript-langserver
 fi
 
 
@@ -74,18 +61,12 @@ curl -fLo ~/.config/nvim/colors/kalisi.vim --create-dirs https://raw.githubuserc
 if which brew; then
     mkdir -p ~/Library/Fonts/
     pushd $_
-elif which dnf; then
-    mkdir -p ~/.local/share/fonts/
-    pushd $_
 fi
 
 if [ ! -r "Cousine Regular Nerd Font Complete.ttf" ]; then
     wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Cousine/Regular/complete/Cousine%20Regular%20Nerd%20Font%20Complete.ttf
     if which brew; then
         echo "Change the font manually in the iTerm2 settings to 'Cousine'."
-    elif which dnf; then
-        sudo fc-cache -vf ~/.local/share/fonts
-        echo "Tilix font will be updated after running pullup_gnome_dconf.sh"
     fi
 fi
 popd

@@ -19,15 +19,6 @@ if which brew; then
         rsync nmap telnet tree unzip \
         gawk gnu-sed gnu-tar md5sha1sum
 
-elif which dnf; then
-
-    sudo dnf install \
-        htop ack pwgen \
-        git ncdu httpie \
-        tmux \
-        jq \
-        rsync nmap telnet tree unzip
-
 elif which apt; then
 
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
