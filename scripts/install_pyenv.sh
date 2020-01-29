@@ -6,9 +6,10 @@ set -euxo pipefail
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
 if which brew; then
+    # https://docs.brew.sh/Homebrew-and-Python
     brew install \
-        pyenv pyenv-virtualenvwrapper \
-        python \
+        pyenv pyenv-virtualenv pyenv-virtualenvwrapper \
+        python python@2 \
         openssl openssl@1.1 \
         readline xz
 
