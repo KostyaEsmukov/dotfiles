@@ -5,7 +5,9 @@ set -euxo pipefail
 if which brew; then
     brew tap neovim/neovim
     brew install neovim \
+        ruby \
         npm \
+        wget \
         the_silver_searcher \
         ctags-exuberant \
         gcc
