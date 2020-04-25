@@ -1,0 +1,3 @@
+Host *
+    # Fix SSH agent on macos: https://superuser.com/a/1158050
+    UseKeychain yes

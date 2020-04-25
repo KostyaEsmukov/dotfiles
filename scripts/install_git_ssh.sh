@@ -20,4 +20,11 @@ cat >> ~/.gitconfig <<EOF
     path = dotfiles/gitconfig
 EOF
 
-echo "Don't forget to get your SSH and GPG keys!"
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+if [ ! -f ~/.ssh/config ]; then
+    cp ~/dotfiles/ssh/config.initial ~/.ssh/config
+fi
+chmod 750 ~/.ssh/config
+
+echo "Don't forget to bring your SSH and GPG keys!"
