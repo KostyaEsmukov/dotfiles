@@ -47,3 +47,6 @@ perl -i -p0e \
     's#(source \$ZSH/oh-my-zsh.sh)#source ~/dotfiles/zshrc/ohmyzsh\n${1}\nsource ~/dotfiles/zshrc/zshrc#igs' \
     ~/.zshrc
 
+if [ ! -f ~/.rsync_watch_excludes ]; then
+    cp ~/dotfiles/rsync_watch_excludes.initial ~/.rsync_watch_excludes
+fi
