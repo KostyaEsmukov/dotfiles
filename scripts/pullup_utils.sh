@@ -17,7 +17,7 @@ if which brew; then
         tmux \
         jq \
         rsync nmap telnet tree unzip \
-        gawk gnu-sed gnu-tar md5sha1sum
+        gawk gnu-sed gnu-tar gnu-getopt coreutils
 
 elif which apt; then
 
