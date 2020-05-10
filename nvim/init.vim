@@ -256,6 +256,7 @@ let g:omni_sql_no_default_maps = 1
 
 let g:ale_fixers = {
 \    'python': ['black', 'isort'],
+\    'javascript': ['prettier'],
 \}
 
 "# Language Server

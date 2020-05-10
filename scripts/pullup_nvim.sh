@@ -52,6 +52,7 @@ if which brew; then
     npm install -g neovim
     gem install neovim
     npm install -g javascript-typescript-langserver
+    npm install -g prettier
 fi
 
 
