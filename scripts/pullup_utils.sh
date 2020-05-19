@@ -13,7 +13,7 @@ if which brew; then
 
     brew install \
         htop ack pwgen \
-        git ncdu httpie \
+        git ncdu httpie curl \
         tmux \
         jq \
         rsync nmap telnet tree unzip \
@@ -24,7 +24,7 @@ elif which apt; then
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
     sudo apt install \
         htop ack-grep pwgen \
-        git ncdu httpie \
+        git ncdu httpie curl \
         tmux \
         jq \
         rsync nmap telnet tree unzip
