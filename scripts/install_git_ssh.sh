@@ -8,6 +8,11 @@ if which brew; then
     echo "Install GPG Suite manually"
     open "https://gpgtools.org/"
 
+elif which apt; then
+
+    sudo apt install \
+        gnupg git
+
 else
     echo "Unsupported OS"
     exit 1

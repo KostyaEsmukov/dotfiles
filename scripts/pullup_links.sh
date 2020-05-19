@@ -19,3 +19,4 @@ ln -svf ~/dotfiles/tmux.conf ~/.tmux.conf
 [ -L ~/.ideavimrc ] && rm -vf ~/.ideavimrc
 [ -L ~/.tigrc ] && rm -vf ~/.tigrc
 
+true
