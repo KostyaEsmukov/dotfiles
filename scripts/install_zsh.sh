@@ -35,8 +35,7 @@ else
 fi
 
 # https://github.com/robbyrussell/oh-my-zsh#basic-installation
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
 # Make .zshrc look like this:
 # source ~/dotfiles/zshrc/ohmyzsh
@@ -50,3 +49,5 @@ perl -i -p0e \
 if [ ! -f ~/.rsync_watch_excludes ]; then
     cp ~/dotfiles/rsync_watch_excludes.initial ~/.rsync_watch_excludes
 fi
+
+touch ~/.z
