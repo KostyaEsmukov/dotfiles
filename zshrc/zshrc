@@ -164,6 +164,7 @@ venv_current() {
     [ -n "$VIRTUAL_ENV" ] && echo "%{$fg_bold[green]%}🐍 (${VIRTUAL_ENV:t})%{$reset_color%} "
 }
 
+local ret_status="%(?:%{$fg_bold[green]%}0:%{$fg_bold[red]%}%?%s)"
 PROMPT='
 %{$reset_color%}╭─${ret_status} %{$reset_color%}[%n@%{$fg[$TERM_PROMPT_HOSTNAME_COLOR]%}%m%{$reset_color%} %{$fg[cyan]%}%~%{$reset_color%}] $(venv_current)$(git_prompt_info)⌚ %{$fg_bold[red]%}%*%{$reset_color%}
 ╰─%{$fg[$CARETCOLOR]%}\$%{$reset_color%} '
