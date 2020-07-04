@@ -56,7 +56,7 @@
 [user]
 	name = Kostya Esmukov
 	email = kostya@esmukov.ru
-	signingkey = 2D3B9C1712FF84F7
+	signingkey = A18FE9F6F570D5B4E1E1853FAA7B5406547AF062
 
 [commit]
 	gpgsign = true
