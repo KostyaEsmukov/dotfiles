@@ -32,7 +32,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "## markdown
-Plug 'iamcco/markdown-preview.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
