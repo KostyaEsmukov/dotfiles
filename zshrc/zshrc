@@ -114,16 +114,20 @@ rsync_watch() {
         return 1
     fi
 
-    rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 10m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+    rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 1m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
 
-    fswatch --recursive --print0 --one-per-batch "$1" | xargs -0 -I{} -n1 rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 10m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+    fswatch --recursive --print0 --one-per-batch "$1" | xargs -0 -I{} -n1 rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 1m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
 }
-else
-rsync_watch() {
-    rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 10m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
-    while inotifywait -r -e modify,create,delete "$1"; do
-        rsync -avz --delete -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 10m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
-    done
+rsync_watch_large() {
+    if ! which fswatch > /dev/null 2>&1; then
+        echo "fswatch is not installed. Call:"
+        echo "brew install fswatch"
+        return 1
+    fi
+
+    rsync -rlvz --no-perms --no-owner --no-group --no-times --size-only -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 1m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
+
+    fswatch --recursive --print0 --one-per-batch "$1" | xargs -0 -I{} -n1 rsync -rlvz --no-perms --no-owner --no-group --no-times --size-only -e "ssh -o 'ControlMaster auto' -o 'ControlPath ~/.ssh/cm-rsync-%r@%h:%p' -o 'ControlPersist 1m'" --exclude-from="$HOME"/.rsync_watch_excludes "$1" "$2"
 }
 fi
 
