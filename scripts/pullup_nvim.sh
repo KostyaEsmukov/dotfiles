@@ -4,13 +4,14 @@ set -euxo pipefail
 
 if which brew; then
     brew tap neovim/neovim
-    brew install neovim \
-        ruby \
-        npm \
-        wget \
-        the_silver_searcher \
-        ctags-exuberant \
-        gcc
+    packages="neovim
+        ruby
+        npm
+        wget
+        the_silver_searcher
+        ctags-exuberant
+        gcc"
+    brew install $packages || brew upgrade $packages
 
 else
     echo "Unsupported OS"
