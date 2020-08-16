@@ -16,8 +16,7 @@ Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
-" Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
-Plug 'Aldlevine/nerdtree-git-plugin' " fork of the above, which colors whole line.  https://github.com/Xuyuanp/nerdtree-git-plugin/pull/79
+Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
