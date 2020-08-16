@@ -9,6 +9,7 @@
 --ignore-dir=dist
 --ignore-dir=node_modules/
 --ignore-dir=venv
+--ignore-dir=~
 
 --ignore-dir=match:.*\.egg-info
 
@@ -19,3 +20,5 @@
 --ignore-file=ext:geojson
 
 --sort-files
+
+--type-add=launch:ext:launch
