@@ -10,7 +10,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'commit': 'bbec852ad' }  " newer versions cause occasional freezes
 Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 
 "## Files navigation + VCS
@@ -264,6 +264,9 @@ let g:ale_fixers = {
 
 "## enable auto-complete
 let g:deoplete#enable_at_startup = 1
+
+" Disable unintentional auto complete: https://github.com/Shougo/deoplete.nvim/issues/1013#issuecomment-600029525
+set completeopt=menu,noselect
 
 " Attempt to fix the annoying change in the completion list after the
 " delayed response from the LS.
