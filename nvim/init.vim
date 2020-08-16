@@ -3,6 +3,7 @@ call plug#begin()
 
 "## IDE-alike
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
+Plug 'saltstack/salt-vim'
 Plug 'w0rp/ale' " linter
 Plug 'alfredodeza/coveragepy.vim'  " coverage.py integration. :Coveragepy show
 Plug 'autozimu/LanguageClient-neovim', {
@@ -133,6 +134,7 @@ set shiftwidth=4        " Indentation amount for < and > commands.
 set nowrap
 set scrolloff=2         " Keep some lines visible when scrolling
 
+autocmd FileType sls setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType go setlocal noexpandtab
