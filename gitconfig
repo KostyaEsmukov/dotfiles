@@ -11,6 +11,9 @@
 [fetch]
 	prune = true
 
+[pull]
+	ff = only
+
 [alias]
 	a = add
 	aa = add --all .
