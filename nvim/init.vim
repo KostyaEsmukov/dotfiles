@@ -237,6 +237,9 @@ nnoremap <S-x> :Ack!<Space>
 let $LANG= 'en_US.UTF-8'
 let $LC_ALL= 'en_US.UTF-8'
 
+" use ag instead of ack (it is much faster)
+let g:ackprg = 'ag --vimgrep'
+
 "# Python virtualenvs
 
 let g:python_host_prog = $WORKON_HOME . '/neovim_py2/bin/python'
