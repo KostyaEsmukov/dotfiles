@@ -27,7 +27,7 @@ pyenv shell system
 pip3 install --user --upgrade \
     black mypy pipenv \
     flake8 pylint \
-    isort flake8-isort \
+    'isort>=5' flake8-isort \
     python-language-server'[all]' \
     pyls-black pyls-isort pyls-mypy \
     coverage \
