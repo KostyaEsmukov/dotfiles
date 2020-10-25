@@ -53,7 +53,8 @@ deactivate
 # with pyenv is considered a rocket-science.
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
-pyenv install 3.9-dev
+pyenv install 3.10-dev
+pyenv install 3.9.0
 pyenv install 3.8.1
 pyenv install 3.7.6
 pyenv install 3.6.10
