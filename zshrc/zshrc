@@ -204,7 +204,7 @@ iterm2_tab_precmd() {
 }
 
 iterm2_tab_preexec() {
-    if [[ "$1" =~ "^ssh " ]]; then
+    if [[ "$1" =~ "^ssh" ]]; then
         tab_reset
     elif [[ "$1" =~ "^(n|nvim|t|tmux)( |$)" ]]; then
         tab_color_env $TERM_LOCAL_TAB_COLOR_NVIM
