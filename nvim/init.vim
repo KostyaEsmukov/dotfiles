@@ -2,6 +2,7 @@
 call plug#begin()
 
 "## IDE-alike
+let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
 Plug 'saltstack/salt-vim'
 Plug 'w0rp/ale' " linter
@@ -250,7 +251,6 @@ syntax on
 
 let g:ansible_unindent_after_newline = 1
 let g:ansible_extra_keywords_highlight = 1
-let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 
 " Fix an issue with sql files:
 " SQLComplete: The debxt plugin must be loaded for dynamic SQL completion
