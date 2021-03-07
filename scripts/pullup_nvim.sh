@@ -9,6 +9,7 @@ if which brew; then
         npm
         wget
         the_silver_searcher
+        clang-format
         ctags-exuberant
         gcc"
     brew install $packages || brew upgrade $packages

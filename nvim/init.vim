@@ -259,6 +259,10 @@ let g:omni_sql_no_default_maps = 1
 "# ALE
 
 let g:ale_fixers = {
+\    'c': [ 'clang-format' ],
+\    'h': [ 'clang-format' ],
+\    'cpp': [ 'clang-format' ],
+\    'hpp': [ 'clang-format' ],
 \    'python': ['black', 'isort'],
 \    'javascript': ['prettier'],
 \}
