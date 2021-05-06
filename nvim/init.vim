@@ -263,8 +263,17 @@ let g:ale_fixers = {
 \    'h': [ 'clang-format' ],
 \    'cpp': [ 'clang-format' ],
 \    'hpp': [ 'clang-format' ],
+\
 \    'python': ['black', 'isort'],
+\
+\    'css': ['prettier'],
+\    'html': ['prettier'],
 \    'javascript': ['prettier'],
+\    'javascriptreact': ['prettier'],
+\    'json': ['prettier'],
+\    'scss': ['prettier'],
+\    'typescript': ['prettier'],
+\    'typescriptreact': ['prettier'],
 \}
 
 "# Language Server
