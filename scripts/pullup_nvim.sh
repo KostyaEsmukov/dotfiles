@@ -31,6 +31,7 @@ pip3 install --user --upgrade \
     'isort>=5' flake8-isort \
     python-language-server'[all]' \
     pyls-black pyls-isort pyls-mypy \
+    pyupgrade \
     coverage \
     tox tox-venv tox-pyenv
 
