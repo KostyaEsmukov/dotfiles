@@ -18,6 +18,7 @@ Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
@@ -187,10 +188,6 @@ let g:DevIconsEnableFoldersOpenClose = 1
 
 " Reduce indentation
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
-
-" Fix nerdtree + devicons regression:
-" see https://github.com/ryanoasis/vim-devicons/issues/250
-highlight link NERDTreeFlags NERDTreeDir
 
 let g:NERDTreeGitStatusNodeColorization = 1  "enables colorization
 let g:NERDTreeGitStatusWithFlags = 1  "enables flags, (may be default), required for colorization
