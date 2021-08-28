@@ -219,10 +219,9 @@ add-zsh-hook preexec iterm2_tab_preexec
 
 if which pyenv > /dev/null 2>&1; then
     export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+    export PYENV_ROOT=`pyenv root`
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init - zsh)"
     pyenv virtualenvwrapper
     # . `brew list pyenv 2>/dev/null | head -1 | sed 's/\(^.*\/pyenv\/[^\/]*\).*/\1/'`/completions/pyenv.zsh
-
-    # make nvim :checkhealth happy
-    export PYENV_ROOT=`pyenv root`
 fi

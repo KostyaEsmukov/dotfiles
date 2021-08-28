@@ -25,6 +25,8 @@ if ! which pyenv; then
 PYVER=`/usr/local/bin/python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])), end="")'`
 export PATH="${HOME}/Library/Python/${PYVER}/bin:$PATH"
 
+eval "$(pyenv init --path)"
+
 EOF
     fi
 
@@ -62,7 +64,8 @@ pyenv install pypy2.7-7.3.0
 export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 
-pyenv install 2.7.18
+# https://github.com/pyenv/pyenv-virtualenv/issues/401#issuecomment-907693650
+pyenv install 2.7.18 && pyenv shell 2.7.18 && python -m pip install --upgrade --force-reinstall virtualenv
 
 cd ~
 rm .python-version
