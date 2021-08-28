@@ -2,24 +2,25 @@
 
 set -euxo pipefail
 
-# List of build deps:
-# https://github.com/pyenv/pyenv/wiki/Common-build-problems
+if ! which pyenv; then
+    # List of build deps:
+    # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
-if which brew; then
-    # https://docs.brew.sh/Homebrew-and-Python
-    brew install \
-        pyenv pyenv-virtualenv pyenv-virtualenvwrapper \
-        python \
-        openssl openssl@1.1 \
-        readline xz
+    if which brew; then
+        # https://docs.brew.sh/Homebrew-and-Python
+        brew install \
+            pyenv pyenv-virtualenv pyenv-virtualenvwrapper \
+            python \
+            openssl openssl@1.1 \
+            readline xz
 
-else
-    echo "Unsupported OS"
-    exit 1
-fi
+    else
+        echo "Unsupported OS"
+        exit 1
+    fi
 
 
-cat >> ~/.zshrc << 'EOF'
+    cat >> ~/.zshrc << 'EOF'
 
 export PATH="${HOME}/.pyenv/bin:${HOME}/.local/bin:$PATH"
 
@@ -32,8 +33,8 @@ export PYENV_ROOT=`pyenv root`
 
 EOF
 
-if which brew; then
-    cat >> ~/.zshrc << 'EOF'
+    if which brew; then
+        cat >> ~/.zshrc << 'EOF'
 
 export CFLAGS="${CFLAGS} -I$(brew --prefix readline)/include -I$(brew --prefix openssl@1.1)/include"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix readline)/lib -L$(brew --prefix openssl@1.1)/lib"
@@ -41,8 +42,9 @@ export LDFLAGS="${LDFLAGS} -L$(brew --prefix readline)/lib -L$(brew --prefix ope
 export PATH="${HOME}/Library/Python/3.7/bin:$PATH"
 
 EOF
-fi
+    fi
 
+fi
 
 # Running in zsh, which would correctly init pyenv using the code above
 cat | zsh -ls << 'EOF' || true
@@ -74,5 +76,5 @@ pyenv install 2.7.18
 cd ~
 pyenv local 3.8.11
 
-echo press enter
+exit
 EOF
