@@ -35,6 +35,7 @@ pip3 install --user --upgrade \
     flake8-isort \
     mypy \
     pipenv \
+    py-spy \
     pylint \
     pyls-black \
     pyls-isort \
