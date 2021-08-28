@@ -46,6 +46,13 @@ EOF
 
 fi
 
+# Fix for `ImportError: No module named pyexpat`:
+#   export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
+#
+# See also: https://stackoverflow.com/a/62827571
+
+
+
 # Running in zsh, which would correctly init pyenv using the code above
 cat | zsh -ls << 'EOF' || true
 source ~/.zshrc
@@ -55,7 +62,7 @@ deactivate
 # with pyenv is considered a rocket-science.
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
-pyenv install 3.10.0b4
+pyenv install 3.10.0rc1
 pyenv install 3.9.6
 pyenv install 3.8.11
 pyenv install 3.7.11
