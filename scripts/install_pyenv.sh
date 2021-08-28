@@ -53,15 +53,15 @@ deactivate
 # with pyenv is considered a rocket-science.
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
-pyenv install 3.10-dev
-pyenv install 3.9.0
-pyenv install 3.8.1
-pyenv install 3.7.6
-pyenv install 3.6.10
-pyenv install 3.5.9
+pyenv install 3.10.0b4
+pyenv install 3.9.6
+pyenv install 3.8.11
+pyenv install 3.7.11
+pyenv install 3.6.14
+pyenv install 3.5.10
 
-pyenv install pypy3.6-7.3.0
-pyenv install pypy2.7-7.3.0
+pyenv install pypy3.6-7.3.3
+pyenv install pypy2.7-7.3.1
 
 
 # Link against openssl 1.0
@@ -69,11 +69,10 @@ pyenv install pypy2.7-7.3.0
 export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 
-pyenv install 3.4.10
-pyenv install 2.7.17
+pyenv install 2.7.18
 
 cd ~
-pyenv local 3.7.6
+pyenv local 3.8.11
 
 echo press enter
 EOF
