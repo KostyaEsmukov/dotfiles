@@ -44,7 +44,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 # - Finder
 # - Mail
 # - Spotify
-# - Evernote
 # - Onenote
 # - Chrome
 # - Firefox
@@ -53,7 +52,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 # - iTerm 2
 # - Safari
 # - Telegram
-# - Slack
 # - Fork app
 defaults write com.apple.dock orientation -string left
 defaults write com.apple.dock largesize -int 60
