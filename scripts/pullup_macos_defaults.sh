@@ -270,6 +270,9 @@ defaults write NSGlobalDomain AppleLocale -string "en_RU"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
+# Use caps lock for language switching
+defaults write -g TISRomanSwitchState 1
+
 sudo systemsetup -settimezone "Europe/Moscow" > /dev/null
 
 # Enable lid wakeup
