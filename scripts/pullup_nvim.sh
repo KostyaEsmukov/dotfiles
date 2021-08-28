@@ -4,14 +4,16 @@ set -euxo pipefail
 
 if which brew; then
     brew tap neovim/neovim
-    packages="neovim
-        ruby
-        npm
-        wget
-        the_silver_searcher
+    packages="
         clang-format
         ctags-exuberant
-        gcc"
+        gcc
+        neovim
+        npm
+        ruby
+        the_silver_searcher
+        wget
+    "
     brew install $packages || brew upgrade $packages
 
 else
@@ -26,14 +28,23 @@ deactivate
 
 pyenv shell system
 pip3 install --user --upgrade \
-    black mypy pipenv \
-    flake8 pylint \
-    'isort>=5' flake8-isort \
-    python-language-server'[all]' \
-    pyls-black pyls-isort pyls-mypy \
-    pyupgrade \
+    'isort>=5' \
+    black \
     coverage \
-    tox tox-venv tox-pyenv
+    flake8 \
+    flake8-isort \
+    mypy \
+    pipenv \
+    pylint \
+    pyls-black \
+    pyls-isort \
+    pyls-mypy \
+    python-language-server'[all]' \
+    pyupgrade \
+    tox \
+    tox-pyenv \
+    tox-venv \
+;
 
 pyenv shell `pyenv versions | egrep '^\s*2\.7' | tail -1`
 rmvirtualenv neovim_py2
