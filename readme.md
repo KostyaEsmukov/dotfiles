@@ -17,7 +17,7 @@
     ~/dotfiles/scripts/install_apps.sh
 
     # Re-create the shell session
-    ~/dotfiles/scripts/install_pyenv.sh
+    ~/dotfiles/scripts/pullup_pyenv.sh
     # Re-create the shell session
     ~/dotfiles/scripts/install_git_ssh.sh
     ~/dotfiles/scripts/pullup_nvim.sh
