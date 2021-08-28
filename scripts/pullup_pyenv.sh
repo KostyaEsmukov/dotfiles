@@ -65,6 +65,6 @@ export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib"
 pyenv install 2.7.18
 
 cd ~
-pyenv local 3.8.11
+rm .python-version
 
 EOF
