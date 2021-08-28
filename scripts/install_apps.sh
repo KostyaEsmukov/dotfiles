@@ -11,7 +11,7 @@ if [ "Darwin" = `uname` ]; then
     open "https://www.iterm2.com/"
     open "https://git-fork.com/"
 
-    open "https://www.sublimetext.com/3"
+    open "https://www.sublimetext.com/download"
 
     open "https://postgresapp.com/"
 
@@ -22,6 +22,8 @@ if [ "Darwin" = `uname` ]; then
 
     open "https://www.keka.io/"
     open "https://tunnelblick.net/downloads.html"
+
+    brew install kap
 
 else
     echo "Unsupported OS"
