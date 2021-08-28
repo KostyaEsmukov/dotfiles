@@ -13,6 +13,7 @@ if which brew; then
 
     brew install \
         ack \
+        cloc \
         coreutils \
         curl \
         gawk \
@@ -39,6 +40,7 @@ elif which apt; then
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
     sudo apt install \
         ack-grep \
+        cloc \
         curl \
         git \
         htop \
