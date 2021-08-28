@@ -24,7 +24,6 @@ fi
 # zsh correctly initializes pyenv
 zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
-deactivate
 
 pyenv shell system
 pip3 install --user --upgrade \
@@ -47,17 +46,17 @@ pip3 install --user --upgrade \
     tox-venv \
 ;
 
-pyenv shell `pyenv versions | egrep '^\s*2\.7' | tail -1`
-rmvirtualenv neovim_py2
-mkvirtualenv neovim_py2
+pyenv shell `pyenv versions | egrep -o '2\.7[.0-9]+' | tail -1`
+pyenv virtualenv-delete -f neovim_py2
+pyenv virtualenv neovim_py2
+pyenv shell neovim_py2
 pip install --upgrade neovim
-deactivate
 
-pyenv shell `pyenv versions | egrep '^\s*3\.8' | tail -1`
-rmvirtualenv neovim_py3
-mkvirtualenv neovim_py3
+pyenv shell `pyenv versions | egrep -o '3\.8[.0-9]+' | tail -1`
+pyenv virtualenv-delete -f neovim_py3
+pyenv virtualenv neovim_py3
+pyenv shell neovim_py3
 pip install --upgrade neovim
-deactivate
 
 EOF
 
@@ -90,5 +89,5 @@ popd
 
 
 ln -sv ~/dotfiles/nvim/init.vim ~/.config/nvim/
-nvim +PlugInstall +UpdateRemotePlugins +qall
-
+nvim +PlugInstall +qall
+nvim +UpdateRemotePlugins +qall

@@ -245,8 +245,8 @@ let g:ackprg = 'ag --vimgrep'
 
 "# Python virtualenvs
 
-let g:python_host_prog = $WORKON_HOME . '/neovim_py2/bin/python'
-let g:python3_host_prog = $WORKON_HOME . '/neovim_py3/bin/python'
+let g:python_host_prog = trim(system('pyenv prefix neovim_py2')) . '/bin/python'
+let g:python3_host_prog = trim(system('pyenv prefix neovim_py3')) . '/bin/python'
 
 "# Polyglot
 syntax on
