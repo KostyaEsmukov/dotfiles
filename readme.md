@@ -10,7 +10,6 @@
     ~/dotfiles/scripts/pullup_utils.sh
     ~/dotfiles/scripts/install_zsh.sh
     ~/dotfiles/scripts/pullup_links.sh
-    ~/dotfiles/scripts/pullup_bin.sh
     ~/dotfiles/scripts/pullup_vim.sh
     ~/dotfiles/scripts/install_docker.sh
 
