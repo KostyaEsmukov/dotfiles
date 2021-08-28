@@ -19,25 +19,8 @@ if ! which pyenv; then
         exit 1
     fi
 
-
-    cat >> ~/.zshrc << 'EOF'
-
-export PATH="${HOME}/.pyenv/bin:${HOME}/.local/bin:$PATH"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv virtualenvwrapper
-
-# make nvim :checkhealth happy
-export PYENV_ROOT=`pyenv root`
-
-EOF
-
     if which brew; then
         cat >> ~/.zshrc << 'EOF'
-
-export CFLAGS="${CFLAGS} -I$(brew --prefix readline)/include -I$(brew --prefix openssl@1.1)/include"
-export LDFLAGS="${LDFLAGS} -L$(brew --prefix readline)/lib -L$(brew --prefix openssl@1.1)/lib"
 
 export PATH="${HOME}/Library/Python/3.7/bin:$PATH"
 
