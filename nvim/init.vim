@@ -27,6 +27,7 @@ Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
 Plug 'easymotion/vim-easymotion' " fast navigation. ]w  ]b  ]j  ]k
 Plug 'Olical/vim-enmasse' " edit via quickfix. :EnMasse
+Plug 'tyru/open-browser.vim' " fix for gx: https://github.com/vim/vim/issues/4738
 
 "## powerline
 Plug 'vim-airline/vim-airline'
@@ -211,6 +212,11 @@ map <leader>ga :Gwrite<CR>
 "## easymotion
 
 map ] <Plug>(easymotion-prefix)
+
+"## open-browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 "# Trim trailing whitespaces
 " http://vi.stackexchange.com/a/456
