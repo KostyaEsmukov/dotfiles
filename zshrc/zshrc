@@ -11,9 +11,6 @@ export LESS="--RAW-CONTROL-CHARS --IGNORE-CASE"
 # Wine: disable file associations
 export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
-# Delegate workon/mkvirtualenv to pyenv.
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-
 # I don't remember why
 # export FZF_DEFAULT_COMMAND='ag -g ""'
 
@@ -218,10 +215,8 @@ add-zsh-hook preexec iterm2_tab_preexec
 
 
 if which pyenv > /dev/null 2>&1; then
-    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
     export PYENV_ROOT=`pyenv root`
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init - zsh)"
-    pyenv virtualenvwrapper
     # . `brew list pyenv 2>/dev/null | head -1 | sed 's/\(^.*\/pyenv\/[^\/]*\).*/\1/'`/completions/pyenv.zsh
 fi

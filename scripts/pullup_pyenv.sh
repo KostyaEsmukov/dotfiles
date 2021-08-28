@@ -9,10 +9,12 @@ if ! which pyenv; then
     if which brew; then
         # https://docs.brew.sh/Homebrew-and-Python
         brew install \
-            pyenv pyenv-virtualenv pyenv-virtualenvwrapper \
+            pyenv pyenv-virtualenv \
             python \
             openssl openssl@1.1 \
             readline xz
+
+        brew uninstall pyenv-virtualenvwrapper
 
     else
         echo "Unsupported OS"
@@ -42,7 +44,6 @@ fi
 # Running in zsh, which would correctly init pyenv using the code above
 zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
-deactivate
 
 # Apparently installing the latest available Python version
 # with pyenv is considered a rocket-science.
