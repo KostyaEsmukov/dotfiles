@@ -2,26 +2,26 @@
 
 set -euxo pipefail
 
-if ! which pyenv; then
-    # List of build deps:
-    # https://github.com/pyenv/pyenv/wiki/Common-build-problems
+# List of build deps:
+# https://github.com/pyenv/pyenv/wiki/Common-build-problems
 
-    if which brew; then
-        # https://docs.brew.sh/Homebrew-and-Python
-        brew install \
-            pyenv pyenv-virtualenv \
-            python \
-            openssl openssl@1.1 \
-            readline xz
+if which brew; then
+    # https://docs.brew.sh/Homebrew-and-Python
+    brew install \
+        pyenv pyenv-virtualenv \
+        python \
+        openssl openssl@1.1 \
+        readline xz
 
-        brew uninstall pyenv-virtualenvwrapper
+    brew uninstall pyenv-virtualenvwrapper || true
 
-    else
-        echo "Unsupported OS"
-        exit 1
-    fi
+else
+    echo "Unsupported OS"
+    exit 1
+fi
 
-    if which brew; then
+if which brew; then
+    if ! grep -q PYVER ~/.zshrc; then
         cat >> ~/.zshrc << 'EOF'
 
 PYVER=`/usr/local/bin/python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])), end="")'`
@@ -31,7 +31,6 @@ eval "$(pyenv init --path)"
 
 EOF
     fi
-
 fi
 
 # Fix for `ImportError: No module named pyexpat`:
