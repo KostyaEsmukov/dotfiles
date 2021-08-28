@@ -41,6 +41,7 @@ alias t='tmux'
 alias py="python"
 alias py2="python2"
 alias py3="python3"
+alias le="less"
 
 # jpegprogressive_moz landing-header.jpg > landing-header.jpg_
 alias jpegprogressive_moz='jpegtran -copy none -optimize -progressive'
@@ -58,19 +59,6 @@ pkcopy() {
 mdcd() {
     mkdir -p "$@"
     cd "$@"
-}
-
-le() {
-    # Convenient wrapper for `less`.
-    # Usage:
-    # le some-file  # equals to `less some-file`
-    # le whois some-ip  # equals to `whois some-ip | less`
-    if [[ -r "$@" ]]; then
-        # This is a readable file.
-        less "$@"
-    else
-        $@ | less
-    fi
 }
 
 wgen() {
