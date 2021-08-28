@@ -22,7 +22,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
-Plug 'mileszs/ack.vim' " search with ack
+Plug 'mileszs/ack.vim' " search with ag
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
 Plug 'easymotion/vim-easymotion' " fast navigation. ]w  ]b  ]j  ]k
