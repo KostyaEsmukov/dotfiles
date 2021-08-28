@@ -4,7 +4,7 @@ set -euxo pipefail
 
 if [ "Darwin" = `uname` ]; then
 
-    brew cask install docker
+    brew install docker
 
 elif which apt; then
 
