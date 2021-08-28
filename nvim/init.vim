@@ -309,14 +309,14 @@ map <F9> :w <CR> :!g++ % -o %< -std=c++14 <CR>
 "# snippets
 
 " shebang
-map ss i#!/bin/bash <ESC>
+map ss i#!/bin/bash<ESC>
 
 " golang
-map se iif err != nil { <ESC>
+map se iif err != nil {<ESC>
 
 " python
-map sb ifrom pdb import set_trace as bp; bp() <ESC>
-map st iimport traceback; traceback.print_exc() <ESC>
+map sb ifrom pdb import set_trace as bp; bp()<ESC>
+map st iimport traceback; traceback.print_exc()<ESC>
 
 "# editorconfig
 
