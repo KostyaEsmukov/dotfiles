@@ -22,7 +22,8 @@ if ! which pyenv; then
     if which brew; then
         cat >> ~/.zshrc << 'EOF'
 
-export PATH="${HOME}/Library/Python/3.7/bin:$PATH"
+PYVER=`/usr/local/bin/python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])), end="")'`
+export PATH="${HOME}/Library/Python/${PYVER}/bin:$PATH"
 
 EOF
     fi
