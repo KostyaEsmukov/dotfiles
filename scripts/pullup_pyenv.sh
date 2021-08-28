@@ -53,7 +53,7 @@ pyenv install 3.6.14
 pyenv install 3.5.10
 
 pyenv install pypy3.6-7.3.3
-pyenv install pypy2.7-7.3.1
+pyenv install pypy2.7-7.3.0
 
 
 # Link against openssl 1.0
