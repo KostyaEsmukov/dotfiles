@@ -20,7 +20,6 @@ Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'airblade/vim-rooter' " changes cwd to git root
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'mileszs/ack.vim' " search with ack
