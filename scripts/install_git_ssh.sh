@@ -3,10 +3,12 @@
 set -euxo pipefail
 
 if which brew; then
-    brew install git
+    brew install \
+        gnupg pinentry-mac git
 
-    echo "Install GPG Suite manually"
-    open "https://gpgtools.org/"
+    if ! grep -q pinentry-program ~/.gnupg/gpg-agent.conf; then
+        echo '\npinentry-program /usr/local/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
+    fi
 
 elif which apt; then
 
