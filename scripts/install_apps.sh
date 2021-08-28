@@ -16,14 +16,16 @@ if [ "Darwin" = `uname` ]; then
     open "https://postgresapp.com/"
 
     open "https://www.virtualbox.org/wiki/Downloads"
-    open "https://www.wireshark.org/download.html"
 
     # -- macos-specific
 
     open "https://www.keka.io/"
     open "https://tunnelblick.net/downloads.html"
 
-    brew install kap
+    brew install --cask \
+        kap \
+        wireshark \
+    ;
 
 else
     echo "Unsupported OS"
