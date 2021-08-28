@@ -12,22 +12,47 @@ fi
 if which brew; then
 
     brew install \
-        htop ack pwgen \
-        git ncdu httpie curl \
-        tmux \
+        ack \
+        coreutils \
+        curl \
+        gawk \
+        git \
+        gnu-getopt \
+        gnu-sed \
+        gnu-tar \
+        htop \
+        httpie \
         jq \
-        rsync nmap telnet tree unzip \
-        gawk gnu-sed gnu-tar gnu-getopt coreutils
+        ncdu \
+        nmap \
+        pwgen \
+        rsync \
+        telnet \
+        tmux \
+        tree \
+        unzip \
+    ;
+
 
 elif which apt; then
 
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
     sudo apt install \
-        htop ack-grep pwgen \
-        git ncdu httpie curl \
-        tmux \
+        ack-grep \
+        curl \
+        git \
+        htop \
+        httpie \
         jq \
-        rsync nmap telnet tree unzip
+        ncdu \
+        nmap \
+        pwgen \
+        rsync \
+        telnet \
+        tmux \
+        tree \
+        unzip \
+    ;
 
 else
     echo "Unsupported OS"
