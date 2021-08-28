@@ -22,7 +22,7 @@ else
 fi
 
 # zsh correctly initializes pyenv
-cat | zsh -ls << 'EOF' || true
+zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
 deactivate
 
@@ -59,7 +59,6 @@ mkvirtualenv neovim_py3
 pip install --upgrade neovim
 deactivate
 
-echo press enter
 EOF
 
 

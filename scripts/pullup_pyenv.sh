@@ -54,7 +54,7 @@ fi
 
 
 # Running in zsh, which would correctly init pyenv using the code above
-cat | zsh -ls << 'EOF' || true
+zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
 deactivate
 
@@ -83,5 +83,4 @@ pyenv install 2.7.18
 cd ~
 pyenv local 3.8.11
 
-exit
 EOF
