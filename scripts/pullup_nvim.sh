@@ -10,7 +10,7 @@ if which brew; then
         gcc
         neovim
         npm
-        ruby
+        ruby@2.7
         the_silver_searcher
         wget
     "
@@ -53,7 +53,7 @@ mkvirtualenv neovim_py2
 pip install --upgrade neovim
 deactivate
 
-pyenv shell `pyenv versions | egrep '^\s*3\.7' | tail -1`
+pyenv shell `pyenv versions | egrep '^\s*3\.8' | tail -1`
 rmvirtualenv neovim_py3
 mkvirtualenv neovim_py3
 pip install --upgrade neovim
