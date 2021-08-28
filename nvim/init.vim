@@ -208,6 +208,8 @@ let g:gitgutter_diff_base = 'HEAD'  " include staged changes in diff
 " \ga to stage the current file
 map <leader>ga :Gwrite<CR>
 
+command Gblame Git blame
+
 "## easymotion
 
 map ] <Plug>(easymotion-prefix)
