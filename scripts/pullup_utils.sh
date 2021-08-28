@@ -14,13 +14,8 @@ if which brew; then
     brew install \
         ack \
         cloc \
-        coreutils \
         curl \
-        gawk \
         git \
-        gnu-getopt \
-        gnu-sed \
-        gnu-tar \
         htop \
         httpie \
         jq \
@@ -32,6 +27,12 @@ if which brew; then
         tmux \
         tree \
         unzip \
+        \
+        coreutils \
+        gawk \
+        gnu-getopt \
+        gnu-sed \
+        gnu-tar \
     ;
 
 
