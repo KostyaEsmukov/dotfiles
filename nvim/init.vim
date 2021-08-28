@@ -12,7 +12,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'commit': 'bbec852ad' }  " newer versions cause occasional freezes
-Plug 'plytophogy/vim-virtualenv'  " :VirtualEnv* commands
 
 "## Files navigation + VCS
 Plug 'scrooloose/nerdtree'
