@@ -8,6 +8,7 @@ if which brew; then
         clang-format
         ctags-exuberant
         gcc
+        gopls
         neovim
         npm
         ruby@2.7

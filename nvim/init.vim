@@ -295,6 +295,7 @@ call deoplete#custom#option('auto_complete_delay', 200)
 let g:LanguageClient_diagnosticsList = 'Disabled'
 
 let g:LanguageClient_serverCommands = {
+    \ 'go': ['gopls'],
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
