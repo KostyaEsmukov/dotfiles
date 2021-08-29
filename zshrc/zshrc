@@ -201,6 +201,8 @@ autoload -U add-zsh-hook
 add-zsh-hook precmd  iterm2_tab_precmd
 add-zsh-hook preexec iterm2_tab_preexec
 
+# Default: macos 256, debian 1024
+ulimit -n 4096
 
 if which pyenv > /dev/null 2>&1; then
     export PYENV_ROOT=`pyenv root`
