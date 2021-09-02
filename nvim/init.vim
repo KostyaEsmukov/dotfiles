@@ -231,7 +231,7 @@ endfun
 command! TrimWhitespace call TrimWhitespace()
 
 " http://stackoverflow.com/a/10410590
-autocmd BufWritePre * if index(['markdown', 'patch', 'gitsendemail'], &ft) < 0 | :call TrimWhitespace()
+autocmd BufWritePre * if index(['markdown', 'diff', 'patch', 'gitsendemail'], &ft) < 0 | :call TrimWhitespace()
 
 "# ack
 " don't jump to the first result
