@@ -68,6 +68,7 @@ if which brew; then
     sudo gem install neovim
     npm install -g javascript-typescript-langserver
     npm install -g prettier
+    npm install -g yarn
 fi
 
 
