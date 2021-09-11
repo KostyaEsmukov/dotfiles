@@ -98,6 +98,11 @@ nnoremap <space> zz
 "# colors
 colorscheme kalisi
 set background=dark
+"## Fix airblade/vim-gitgutter breaking Gblame diff colors
+" offending part: https://github.com/airblade/vim-gitgutter/blob/256702dd1432894b3607d3de6cd660863b331818/autoload/gitgutter/highlight.vim#L119
+hi diffAdded ctermbg=22
+hi diffChanged ctermbg=239
+hi diffRemoved cterm=none ctermbg=237 ctermfg=238
 
 "# autosave changes
 " http://vim.wikia.com/wiki/Auto_save_files_when_focus_is_lost
