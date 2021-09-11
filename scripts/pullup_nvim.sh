@@ -12,6 +12,7 @@ if which brew; then
         neovim
         npm
         ruby@2.7
+        shellcheck
         the_silver_searcher
         wget
     "
