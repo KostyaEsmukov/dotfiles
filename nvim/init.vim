@@ -276,6 +276,8 @@ let g:ale_fixers = {
 \
 \    'python': ['black', 'isort'],
 \
+\    'sql': ['pgformatter'],
+\
 \    'css': ['prettier'],
 \    'html': ['prettier'],
 \    'javascript': ['prettier'],

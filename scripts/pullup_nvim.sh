@@ -12,6 +12,7 @@ if which brew; then
         gopls
         neovim
         npm
+        pgformatter
         ruby@2.7
         shellcheck
         staticcheck
