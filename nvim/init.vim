@@ -268,9 +268,11 @@ let g:omni_sql_no_default_maps = 1
 
 let g:ale_fixers = {
 \    'c': [ 'clang-format' ],
-\    'h': [ 'clang-format' ],
 \    'cpp': [ 'clang-format' ],
+\    'h': [ 'clang-format' ],
 \    'hpp': [ 'clang-format' ],
+\
+\    'go': ['gofmt'],
 \
 \    'python': ['black', 'isort'],
 \
@@ -282,6 +284,8 @@ let g:ale_fixers = {
 \    'scss': ['prettier'],
 \    'typescript': ['prettier'],
 \    'typescriptreact': ['prettier'],
+\    'yaml': ['prettier'],
+\    'yaml.ansible': ['prettier'],
 \}
 
 "# Language Server
