@@ -14,6 +14,7 @@ if which brew; then
         npm
         ruby@2.7
         shellcheck
+        staticcheck
         the_silver_searcher
         wget
     "
