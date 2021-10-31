@@ -13,7 +13,6 @@ DISABLE_AUTO_UPDATE=true
 plugins=(
     encode64
     git
-    sudo
     z
 
     command-time
