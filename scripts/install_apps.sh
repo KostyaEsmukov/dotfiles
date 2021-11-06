@@ -15,20 +15,17 @@ if [ "Darwin" = `uname` ]; then
 
     open "https://www.sublimetext.com/download"
 
-    open "https://postgresapp.com/"
-
-    open "https://www.virtualbox.org/wiki/Downloads"
-
     open "https://desktop.telegram.org/"
     open "https://zoom.us/download"
 
     # -- macos-specific
 
-    open "https://www.keka.io/"
     open "https://tunnelblick.net/downloads.html"
 
     brew install --cask \
         kap \
+        keka \
+        virtualbox \
         vlc \
         wireshark \
     ;
