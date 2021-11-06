@@ -14,7 +14,7 @@
     ~/dotfiles/scripts/install_docker.sh
 
     # GUI apps
-    ~/dotfiles/scripts/install_apps.sh
+    ~/dotfiles/scripts/install_apps.sh home|work
 
     # Re-create the shell session
     ~/dotfiles/scripts/pullup_pyenv.sh
