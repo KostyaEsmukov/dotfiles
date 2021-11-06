@@ -31,7 +31,8 @@ zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
 
 pyenv shell system
-pip3 install --user --upgrade \
+python3 -m pip install --upgrade pip
+python3 -m pip install --user --upgrade \
     'isort>=5' \
     black \
     coverage \
