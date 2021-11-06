@@ -10,6 +10,8 @@ osascript -e 'tell application "System Preferences" to quit'
 # Ask for the administrator password upfront
 sudo -v
 
+BIGSUR=$(expr `sw_vers -productVersion` '>=' 11 > /dev/null && echo 1)
+
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
@@ -107,12 +109,19 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGestu
 defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 3
 defaults write com.apple.AppleMultitouchTrackpad UserPreferences -string 1
 
+if [ -z "$BIGSUR" ]; then
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-# defaults write com.apple.menuextra.battery ShowTime -string "YES"  # doesn't work now
-
-
+else
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 4
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 18
+fi
 
 defaults write com.apple.universalaccess reduceMotion -bool true
+if [ ! -z "$BIGSUR" ]; then
+defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+fi
 
 
 
