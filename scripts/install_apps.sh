@@ -40,9 +40,6 @@ _install_home() {
         virtualbox \
         wireshark \
     ;
-    brew install \
-        terraform \
-    ;
 
     open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
     open "https://apps.apple.com/ru/app/pine-player/id1112075769?l=en&mt=12"
