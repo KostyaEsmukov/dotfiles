@@ -46,10 +46,11 @@ source ~/.zshrc
 # with pyenv is considered a rocket-science.
 # https://stackoverflow.com/questions/29687140/install-latest-python-version-with-pyenv
 
-pyenv install 3.10.0
-pyenv install 3.9.7
-pyenv install 3.8.12
-pyenv install 3.7.12
+# Show available versions: `pyenv install --list`
+pyenv install 3.10.6
+pyenv install 3.9.13
+pyenv install 3.8.13
+pyenv install 3.7.13
 
 # https://github.com/pyenv/pyenv/issues/1740#issuecomment-931540317
 export CFLAGS="-I$(brew --prefix openssl@1.1)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
