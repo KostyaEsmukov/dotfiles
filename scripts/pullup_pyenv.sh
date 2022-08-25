@@ -11,11 +11,14 @@ if which brew; then
         pyenv pyenv-virtualenv \
         python \
         openssl openssl@1.1 \
-        readline xz
+        readline xz bzip2
 
 else
-    echo "Unsupported OS"
-    exit 1
+    sudo apt install \
+        libreadline-dev libbz2-dev libssl-dev libsqlite3-dev libffi-dev liblzma-dev
+    if ! which pyenv >/dev/null 2>&1; then
+        curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash -x
+    fi
 fi
 
 if which brew; then
@@ -26,6 +29,17 @@ PYVER=`/usr/local/bin/python3 -c 'import sys; print(".".join(map(str, sys.versio
 export PATH="${HOME}/Library/Python/${PYVER}/bin:$PATH"
 
 eval "$(pyenv init --path)"
+
+EOF
+    fi
+else
+    if ! grep -q PYENV_ROOT ~/.zshrc; then
+        cat >> ~/.zshrc << 'EOF'
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 EOF
     fi
