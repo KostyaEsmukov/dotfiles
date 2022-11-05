@@ -14,6 +14,7 @@ if which brew; then
         neovim
         npm
         pgformatter
+        postgresql@14
         ruby@2.7
         shellcheck
         staticcheck
