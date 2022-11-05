@@ -33,12 +33,13 @@ source ~/.zshrc
 pyenv shell system
 python3 -m pip install --upgrade pip
 python3 -m pip install --user --upgrade \
-    'isort>=5' \
     black \
     coverage \
     flake8 \
     flake8-isort \
+    isort \
     mypy \
+    pip-tools \
     pipenv \
     py-spy \
     pylint \
