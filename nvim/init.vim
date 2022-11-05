@@ -312,10 +312,12 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'typescript.tsx': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'typescriptreact': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'python': ['pyls'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <F6> :call LanguageClient_textDocument_codeAction()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
