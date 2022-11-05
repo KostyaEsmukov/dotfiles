@@ -21,6 +21,7 @@ if which brew; then
         ncdu \
         nmap \
         pwgen \
+        rename \
         rsync \
         telnet \
         the_silver_searcher \
@@ -49,6 +50,7 @@ elif which apt; then
         ncdu \
         nmap \
         pwgen \
+        rename \
         rsync \
         silversearcher-ag \
         telnet \
