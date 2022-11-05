@@ -17,7 +17,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'commit': 'bbec852a
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'airblade/vim-gitgutter' " shows git diff in the gutter
 Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
