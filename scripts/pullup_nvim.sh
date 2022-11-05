@@ -7,6 +7,7 @@ if which brew; then
     packages="
         clang-format
         ctags-exuberant
+        fzf
         gcc
         go
         gopls
