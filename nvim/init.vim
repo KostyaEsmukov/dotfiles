@@ -37,8 +37,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 "## editor
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
-Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
+Plug 'tpope/vim-abolish' " crc -> to camelCase, crs -> to snake_case
 Plug 'tpope/vim-commentary' " gc (in visual) - block comment
+Plug 'tpope/vim-surround' " replace surroundings: quotes, etc
 Plug 'christoomey/vim-sort-motion' " gs (in visual) - sort lines
 
 let g:swap_no_default_key_mappings = 1  " gs -- conflicts with vim-sort-motion
