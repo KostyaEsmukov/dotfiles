@@ -51,6 +51,7 @@ python3 -m pip install --user --upgrade \
     tox \
     tox-pyenv \
     tox-venv \
+    twine \
 ;
 
 pyenv shell `pyenv versions | egrep -o '2\.7[.0-9]+' | tail -1`
