@@ -73,6 +73,7 @@ nnoremap <C-e> :CtrlPBuffer<CR>
 "## copy the current relative path to clipboard
 
 nmap cp :let @+ = expand("%")<cr>
+nmap cx :!chmod +x %<cr>
 
 "## arguments swap
 
