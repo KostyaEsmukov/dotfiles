@@ -74,6 +74,7 @@ nnoremap <C-e> :CtrlPBuffer<CR>
 
 nmap cp :let @+ = expand("%")<cr>
 nmap cx :!chmod +x %<cr>
+nmap dl :e ++ff=dos \| set ff=unix \| w!<cr>
 
 "## arguments swap
 
