@@ -15,7 +15,15 @@ if which brew; then
 
 else
     sudo apt install \
-        libreadline-dev libbz2-dev libssl-dev libsqlite3-dev libffi-dev liblzma-dev
+        build-essential \
+        libbz2-dev \
+        libffi-dev \
+        liblzma-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        make \
+    ;
     if ! which pyenv >/dev/null 2>&1; then
         curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash -x
     fi
