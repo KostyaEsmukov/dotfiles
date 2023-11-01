@@ -31,9 +31,11 @@ EOF
 
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
-if [ ! -f ~/.ssh/config ]; then
-    cp ~/dotfiles/ssh/config.initial ~/.ssh/config
+if which brew; then
+    if [ ! -f ~/.ssh/config ]; then
+        cp ~/dotfiles/ssh/config.initial.macos ~/.ssh/config
+    fi
+    chmod 750 ~/.ssh/config
 fi
-chmod 750 ~/.ssh/config
 
 echo "Don't forget to bring your SSH and GPG keys!"
