@@ -14,12 +14,15 @@ if which brew; then
     brew install \
         cloc \
         curl \
+        ffmpeg \
         git \
+        grep \
         htop \
         httpie \
         jq \
         ncdu \
         nmap \
+        pv \
         pwgen \
         rename \
         rsync \

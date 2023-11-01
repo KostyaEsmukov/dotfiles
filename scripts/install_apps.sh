@@ -19,6 +19,8 @@ _install_common() {
     open "https://tunnelblick.net/downloads.html"
 
     brew install --cask \
+        gimp \
+        hex-fiend \
         kap \
         keka \
         vlc \
@@ -48,6 +50,26 @@ _install_home() {
 
 _install_work() {
     open "https://zoom.us/download"
+    brew install --cask \
+        finicky \
+        google-drive \
+        openlens \
+        thunderbird \
+    ;
+    brew install \
+        awscli \
+        clickhouse \
+        docker \
+        docker-compose \
+        fswatch \
+        git-filter-repo \
+        git-lfs \
+        kubernetes-cli \
+        libpq \
+        terraform \
+        wrk \
+        yq \
+    ;
 }
 
 else
