@@ -282,8 +282,6 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Use caps lock for language switching
 defaults write -g TISRomanSwitchState 1
 
-sudo systemsetup -settimezone "Europe/Moscow" > /dev/null
-
 # Enable lid wakeup
 sudo pmset -a lidwake 1
 
