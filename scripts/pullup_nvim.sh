@@ -11,6 +11,7 @@ if which brew; then
         gcc
         go
         gopls
+        llvm
         neovim
         npm
         pgformatter
