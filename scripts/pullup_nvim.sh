@@ -91,8 +91,8 @@ if which brew; then
     pushd $_
 fi
 
-if [ ! -r "Cousine Regular Nerd Font Complete.ttf" ]; then
-    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Cousine/Regular/complete/Cousine%20Regular%20Nerd%20Font%20Complete.ttf
+if [ ! -r "CousineNerdFont-Regular.ttf" ]; then
+    wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Cousine/Regular/CousineNerdFont-Regular.ttf
     if which brew; then
         echo "Change the font manually in the iTerm2 settings to 'Cousine'."
     fi
