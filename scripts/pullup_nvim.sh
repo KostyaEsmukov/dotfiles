@@ -52,10 +52,11 @@ python3 -m pip install --user --upgrade \
     python-language-server'[all]' \
     pyupgrade \
     tox \
-    tox-pyenv \
-    tox-venv \
     twine \
+    virtualenv-pyenv \
 ;
+
+python3 -m pip uninstall tox-venv tox-pyenv
 
 pyenv shell `pyenv versions | egrep -o '2\.7[.0-9]+' | tail -1`
 pyenv virtualenv-delete -f neovim_py2
