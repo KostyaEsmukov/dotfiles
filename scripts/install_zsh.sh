@@ -26,7 +26,7 @@ elif which apt; then
 
     # https://github.com/junegunn/fzf#using-git
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    ~/.fzf/install --all
 
     sudo usermod -s `which zsh` `whoami`
 else
@@ -35,7 +35,11 @@ else
 fi
 
 # https://github.com/robbyrussell/oh-my-zsh#basic-installation
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+if grep -q oh-my-zsh ~/.zshrc; then
+    echo "Skipping oh my zsh installation"
+else
+    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+fi
 
 # Make .zshrc look like this:
 # source ~/dotfiles/zshrc/ohmyzsh

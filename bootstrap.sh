@@ -9,5 +9,6 @@ ln -s "$(pwd)" ~/dotfiles
 export APT_CONFIG=.apt.conf
 
 scripts/pullup_utils.sh
+scripts/install_zsh.sh
 scripts/pullup_vim.sh
 scripts/install_git_ssh.sh
