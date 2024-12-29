@@ -17,6 +17,9 @@ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 # https://docs.brew.sh/Analytics
 export HOMEBREW_NO_ANALYTICS=1
 
+HISTSIZE=50000
+SAVEHIST=20000
+
 alias df='df -h'
 alias wget='wget --trust-server-names --restrict-file-names=unix --tries=3'
 alias du='du -h'
