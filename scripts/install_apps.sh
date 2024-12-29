@@ -16,14 +16,13 @@ _install_common() {
 
     open "https://www.sublimetext.com/download"
 
-    open "https://tunnelblick.net/downloads.html"
-
     brew install --cask \
         gimp \
         hex-fiend \
         kap \
         keka \
         vlc \
+        wireshark \
     ;
 }
 
@@ -33,6 +32,8 @@ _install_home() {
     open "https://www.office.com/"
     open "https://www.yubico.com/support/download/yubikey-manager/"
 
+    open "https://tunnelblick.net/downloads.html"
+
     brew install --cask \
         evernote \
         iina \
@@ -40,7 +41,6 @@ _install_home() {
         transmission \
         vagrant \
         virtualbox \
-        wireshark \
     ;
 
     open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
