@@ -215,3 +215,6 @@ if which pyenv > /dev/null 2>&1; then
     eval "$(pyenv virtualenv-init - zsh)"
     # . `brew list pyenv 2>/dev/null | head -1 | sed 's/\(^.*\/pyenv\/[^\/]*\).*/\1/'`/completions/pyenv.zsh
 fi
+
+export MYPY_CACHE_DIR="$HOME/.cache/mypy"
+
