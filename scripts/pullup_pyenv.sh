@@ -65,6 +65,7 @@ zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
 
 # Show available versions: `pyenv install --list`
+pyenv install 3.12:latest
 pyenv install 3.11:latest
 pyenv install 3.10:latest
 pyenv install 3.9:latest
