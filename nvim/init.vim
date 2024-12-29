@@ -23,6 +23,7 @@ Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'mileszs/ack.vim' " search with ag
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
+Plug 'tpope/vim-unimpaired' " [f ]f -- next/prev file
 Plug 'easymotion/vim-easymotion' " fast navigation. ]w  ]b  ]j  ]k
 Plug 'Olical/vim-enmasse' " edit via quickfix. :EnMasse
 Plug 'tyru/open-browser.vim' " fix for gx: https://github.com/vim/vim/issues/4738
