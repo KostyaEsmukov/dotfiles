@@ -44,6 +44,8 @@ elif which apt; then
 
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
     sudo apt install \
+        bind9-dnsutils \
+        bind9-host \
         cloc \
         curl \
         git \
