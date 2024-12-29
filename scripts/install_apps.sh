@@ -30,6 +30,9 @@ _install_common() {
             virtualbox \
         ;
     fi
+
+    brew tap hashicorp/tap
+    brew install hashicorp/tap/terraform
 }
 
 _install_home() {
@@ -71,7 +74,6 @@ _install_work() {
         git-lfs \
         kubernetes-cli \
         libpq \
-        terraform \
         wrk \
         yq \
     ;
