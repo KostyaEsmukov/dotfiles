@@ -8,6 +8,8 @@ cd "$(dirname "$0")"
 ln -s "$(pwd)" ~/dotfiles
 export APT_CONFIG=.apt.conf
 
+sudo -E apt-get update
+
 scripts/pullup_utils.sh
 scripts/install_zsh.sh
 scripts/pullup_vim.sh
