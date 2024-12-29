@@ -34,8 +34,7 @@ zsh -ls < /dev/null << 'EOF' || true
 source ~/.zshrc
 
 pyenv shell system
-python3 -m pip install --upgrade pip
-python3 -m pip install --user --upgrade \
+python3 -m pip install --break-system-packages --user --upgrade \
     black \
     coverage \
     flake8 \
@@ -46,11 +45,13 @@ python3 -m pip install --user --upgrade \
     pipenv \
     py-spy \
     pylint \
-    pyls-black \
     pyls-isort \
-    pyls-mypy \
-    python-language-server'[all]' \
+    pylsp-mypy \
+    python-lsp-black \
+    python-lsp-ruff \
+    python-lsp-server'[all]' \
     pyupgrade \
+    ruff \
     tox \
     twine \
     virtualenv-pyenv \
