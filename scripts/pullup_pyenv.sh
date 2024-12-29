@@ -14,7 +14,7 @@ if which brew; then
         readline xz bzip2
 
 else
-    sudo apt install \
+    sudo -E apt install \
         build-essential \
         libbz2-dev \
         libffi-dev \

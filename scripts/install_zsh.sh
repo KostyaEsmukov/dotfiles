@@ -18,7 +18,7 @@ if which brew; then
 
 elif which apt; then
 
-    sudo apt install zsh \
+    sudo -E apt install zsh \
         libjpeg-turbo-progs \
         jpegoptim \
         libimage-exiftool-perl \

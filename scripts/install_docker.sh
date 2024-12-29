@@ -8,8 +8,8 @@ if [ "Darwin" = `uname` ]; then
 
 elif which apt; then
 
-    sudo apt update
-    sudo apt install --no-install-recommends docker.io docker-compose
+    sudo -E apt update
+    sudo -E apt install --no-install-recommends docker.io docker-compose
 
     sudo gpasswd -a `whoami` docker
 else

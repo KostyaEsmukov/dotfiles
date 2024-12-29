@@ -14,7 +14,7 @@ if which brew; then
 
 elif which apt; then
 
-    sudo apt install \
+    sudo -E apt install \
         gnupg git
 
 else

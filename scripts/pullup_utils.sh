@@ -43,7 +43,7 @@ if which brew; then
 elif which apt; then
 
 # elif which lsb_release && [ "Debian" = `lsb_release -si` ]; then
-    sudo apt install \
+    sudo -E apt install \
         bind9-dnsutils \
         bind9-host \
         cloc \
