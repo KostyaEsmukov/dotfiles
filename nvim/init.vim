@@ -6,7 +6,6 @@ let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plu
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
 Plug 'saltstack/salt-vim'
 Plug 'w0rp/ale' " linter
-Plug 'alfredodeza/coveragepy.vim'  " coverage.py integration. :Coveragepy show
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
