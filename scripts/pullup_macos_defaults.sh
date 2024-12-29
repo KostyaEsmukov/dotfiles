@@ -45,14 +45,14 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 # Dock apps:
 # - Finder
 # - Mail
+# - Safari
 # - Spotify
 # - Onenote
 # - Chrome
 # - Firefox
-# - Keepassx
 # - Sublime Text
-# - iTerm 2
-# - Safari
+# - Keepassx
+# - ghostty
 # - Telegram
 # - Fork app
 defaults write com.apple.dock orientation -string left
@@ -288,6 +288,10 @@ sudo pmset -a lidwake 1
 # Sleep the display after 2 minutes
 sudo pmset -a displaysleep 2
 
+
+# Requires the terminal app to have full disk access
+defaults write com.apple.Safari IncludeDevelopMenu 1
+defaults write com.apple.Safari PrivateBrowsingRequiresAuthentication 0
 
 echo "Please reboot"
 

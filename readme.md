@@ -23,4 +23,5 @@
     ~/dotfiles/scripts/pullup_nvim.sh
 
     # VM preferences
+    # Allow the terminal app to have full disk access first.
     ~/dotfiles/scripts/pullup_macos_defaults.sh
