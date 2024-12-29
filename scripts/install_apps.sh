@@ -31,6 +31,15 @@ _install_common() {
         ;
     fi
 
+    brew install \
+        awscli \
+        clickhouse \
+        docker \
+        docker-compose \
+        libpq \
+        fswatch \
+    ;
+
     brew tap hashicorp/tap
     brew install hashicorp/tap/terraform
 }
@@ -44,11 +53,9 @@ _install_home() {
     open "https://tunnelblick.net/downloads.html"
 
     brew install --cask \
-        evernote \
         iina \
         tor-browser \
         transmission \
-        vagrant \
     ;
 
     open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
@@ -65,15 +72,9 @@ _install_work() {
         thunderbird \
     ;
     brew install \
-        awscli \
-        clickhouse \
-        docker \
-        docker-compose \
-        fswatch \
         git-filter-repo \
         git-lfs \
         kubernetes-cli \
-        libpq \
         wrk \
         yq \
     ;
