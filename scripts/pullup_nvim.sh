@@ -101,6 +101,8 @@ if which brew; then
     popd
 fi
 
-ln -sv ~/dotfiles/nvim/init.vim ~/.config/nvim/
+ln -fsv ~/dotfiles/nvim/init.vim ~/.config/nvim/
+mkdir -p ~/.config/nvim/spell/
+ln -fsv ~/dotfiles/nvim/spell/en.utf-8.add ~/.config/nvim/spell/en.utf-8.add
 nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall

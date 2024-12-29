@@ -157,6 +157,9 @@ set smartcase
 
 " spell checking
 set spell spelllang=en_us
+for d in globpath(&runtimepath, "spell/*.add", 0, 1)
+    execute "mkspell! " . fnameescape(d)
+endfor
 
 " more natural splitting algo
 set splitbelow
