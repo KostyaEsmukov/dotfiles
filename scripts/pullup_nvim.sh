@@ -78,19 +78,6 @@ mkdir -p ~/.config/nvim/
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 curl -fLo ~/.config/nvim/colors/kalisi.vim --create-dirs https://raw.githubusercontent.com/freeo/vim-kalisi/master/colors/kalisi.vim
 
-if which brew; then
-    mkdir -p ~/Library/Fonts/
-    pushd $_
-
-    if [ ! -r "CousineNerdFont-Regular.ttf" ]; then
-        wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Cousine/Regular/CousineNerdFont-Regular.ttf
-        if which brew; then
-            echo "Change the font manually in the iTerm2 settings to 'Cousine'."
-        fi
-    fi
-    popd
-fi
-
 ln -fsv ~/dotfiles/nvim/init.vim ~/.config/nvim/
 mkdir -p ~/.config/nvim/spell/
 ln -fsv ~/dotfiles/nvim/spell/en.utf-8.add ~/.config/nvim/spell/en.utf-8.add

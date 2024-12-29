@@ -11,12 +11,12 @@ _install_common() {
     open "https://www.google.com/chrome/"
 
     open "https://www.keepassx.org/downloads"
-    open "https://www.iterm2.com/"
     open "https://git-fork.com/"
 
     open "https://www.sublimetext.com/download"
 
     brew install --cask \
+        ghostty \
         gimp \
         hex-fiend \
         kap \
