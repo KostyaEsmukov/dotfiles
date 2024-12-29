@@ -66,29 +66,7 @@ source ~/.zshrc
 
 # Show available versions: `pyenv install --list`
 pyenv install 3.12:latest
-pyenv install 3.11:latest
-pyenv install 3.10:latest
-pyenv install 3.9:latest
 pyenv install 3.8:latest
-pyenv install 3.7:latest
-
-# https://github.com/pyenv/pyenv/issues/1740#issuecomment-931540317
-export CFLAGS="-I$(brew --prefix openssl@1.1)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
-export LDFLAGS="-L$(brew --prefix openssl@1.1)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
-
-pyenv install --patch 3.6.15 < <(curl -sSL 'https://github.com/python/cpython/commit/8ea6353.patch?full_index=1')
-pyenv install --patch 3.5.10 < <(curl -sSL 'https://github.com/python/cpython/commit/8ea6353.patch?full_index=1')
-
-pyenv install pypy3.7-7.3.7
-
-
-# Link against openssl 1.0
-# https://github.com/pyenv/pyenv/issues/945#issuecomment-317389780
-export CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl@1.1)/include"
-export LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl@1.1)/lib"
-
-# https://github.com/pyenv/pyenv-virtualenv/issues/401#issuecomment-907693650
-pyenv install 2.7.18 && pyenv shell 2.7.18 && python -m pip install --upgrade --force-reinstall virtualenv
 
 cd ~
 rm .python-version

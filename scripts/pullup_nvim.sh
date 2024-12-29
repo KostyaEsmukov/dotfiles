@@ -59,12 +59,6 @@ python3 -m pip install --break-system-packages --user --upgrade \
 
 python3 -m pip uninstall tox-venv tox-pyenv
 
-pyenv shell `pyenv versions | egrep -o '2\.7[.0-9]+' | tail -1`
-pyenv virtualenv-delete -f neovim_py2
-pyenv virtualenv neovim_py2
-pyenv shell neovim_py2
-pip install --upgrade neovim
-
 pyenv shell `pyenv versions | egrep -o '3\.8[.0-9]+' | tail -1`
 pyenv virtualenv-delete -f neovim_py3
 pyenv virtualenv neovim_py3
@@ -72,15 +66,6 @@ pyenv shell neovim_py3
 pip install --upgrade neovim
 
 EOF
-
-
-if which brew; then
-    npm install -g neovim
-    sudo gem install neovim
-    npm install -g javascript-typescript-langserver
-    npm install -g prettier
-    npm install -g yarn
-fi
 
 
 rm -Rf ~/.config/nvim/
