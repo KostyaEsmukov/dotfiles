@@ -12,6 +12,8 @@ scripts/pullup_utils.sh
 scripts/install_zsh.sh
 scripts/pullup_vim.sh
 scripts/install_git_ssh.sh
+zsh ~/dotfiles/scripts/pullup_pyenv.sh
+zsh ~/dotfiles/scripts/pullup_nvim.sh
 
 cat << EOF >> ~/.zshrc
 
