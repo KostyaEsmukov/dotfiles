@@ -16,7 +16,7 @@ if which brew; then
         npm
         pgformatter
         postgresql@14
-        ruby@2.7
+        ruby
         shellcheck
         staticcheck
         the_silver_searcher
