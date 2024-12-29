@@ -33,7 +33,7 @@ if which brew; then
     if ! grep -q PYVER ~/.zshrc; then
         cat >> ~/.zshrc << 'EOF'
 
-PYVER=`/usr/local/bin/python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])), end="")'`
+PYVER=`/opt/homebrew/bin/python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])), end="")'`
 export PATH="${HOME}/Library/Python/${PYVER}/bin:$PATH"
 
 eval "$(pyenv init --path)"
