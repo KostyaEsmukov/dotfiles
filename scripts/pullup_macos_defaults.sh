@@ -118,7 +118,7 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Blueto
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Sound -int 18
 fi
 
-defaults write com.apple.universalaccess reduceMotion -bool true
+sudo defaults write com.apple.universalaccess reduceMotion -bool true
 if [ ! -z "$BIGSUR" ]; then
 defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 fi
@@ -290,3 +290,6 @@ sudo pmset -a displaysleep 2
 
 
 echo "Please reboot"
+
+echo "Toggle Reduce Motion off in the accessibility settings"
+echo "Set Mouse Shortcut for Mission Control to Mouse 5"
