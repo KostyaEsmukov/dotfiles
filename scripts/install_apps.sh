@@ -24,6 +24,12 @@ _install_common() {
         vlc \
         wireshark \
     ;
+
+    if [ "x86_64" = `uname -m` ]; then
+        brew install --cask \
+            virtualbox \
+        ;
+    fi
 }
 
 _install_home() {
@@ -40,7 +46,6 @@ _install_home() {
         tor-browser \
         transmission \
         vagrant \
-        virtualbox \
     ;
 
     open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
