@@ -51,6 +51,9 @@ alias jpegprogressive='jpegoptim --all-progressive --force --strip-all'
 alias stripexif='exiftool -all= '
 # See also: mogrify -resize 1024x *
 
+picnorm() { 
+    convert $1 $1.jpg && stripexif $1.jpg 
+}
 
 pkcopy() {
     pk | ssh "$@" 'mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys && chmod 600 .ssh/authorized_keys'
