@@ -10,7 +10,7 @@ if which brew; then
     brew install \
         pyenv pyenv-virtualenv \
         python \
-        openssl openssl@1.1 \
+        openssl \
         readline xz bzip2
 
 else

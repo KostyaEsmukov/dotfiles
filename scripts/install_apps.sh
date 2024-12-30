@@ -15,6 +15,8 @@ _install_common() {
 
     open "https://www.sublimetext.com/download"
 
+    open "https://zoom.us/download"
+
     brew install --cask \
         ghostty \
         gimp \
@@ -50,21 +52,20 @@ _install_home() {
     open "https://www.office.com/"
     open "https://www.yubico.com/support/download/yubikey-manager/"
 
-    open "https://tunnelblick.net/downloads.html"
+    open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
+    open "https://apps.apple.com/ru/app/pine-player/id1112075769?l=en&mt=12"
+    open "https://apps.apple.com/ru/app/pipifier/id1160374471?l=en&mt=12"
+    open "https://apps.apple.com/us/app/outline-secure-internet-access/id1356178125?mt=12"
 
     brew install --cask \
         iina \
         tor-browser \
         transmission \
+        tunnelblick \
     ;
-
-    open "https://apps.apple.com/ru/app/microsoft-remote-desktop/id1295203466?l=en&mt=12"
-    open "https://apps.apple.com/ru/app/pine-player/id1112075769?l=en&mt=12"
-    open "https://apps.apple.com/ru/app/pipifier/id1160374471?l=en&mt=12"
 }
 
 _install_work() {
-    open "https://zoom.us/download"
     brew install --cask \
         finicky \
         google-drive \

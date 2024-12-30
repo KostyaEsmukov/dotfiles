@@ -9,7 +9,7 @@ if which brew; then
     if ! grep -q pinentry-program ~/.gnupg/gpg-agent.conf; then
         mkdir -p ~/.gnupg/
         chmod 700 ~/.gnupg/
-        echo "\npinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+        echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
     fi
 
 elif which apt; then
