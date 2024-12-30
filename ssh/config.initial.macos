@@ -2,5 +2,7 @@ Host *
     # Fix SSH agent on macos: https://superuser.com/a/1158050
     UseKeychain yes
 
+    AddKeysToAgent yes
+
     # https://github.com/ghostty-org/ghostty/discussions/3161
     SetEnv TERM=xterm-256color
