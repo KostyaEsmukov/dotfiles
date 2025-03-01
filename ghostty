@@ -1,13 +1,21 @@
 # ghostty +show-config --default --docs
 # ghostty +list-themes
-
-font-family = Courier New Bold
+# ghostty +list-fonts
+#
+font-family = Menlo Bold
+# Courier New Bold
 font-size = 12.5
 
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
 auto-update-channel = stable
-copy-on-select = true
+copy-on-select = clipboard
 cursor-click-to-move = false
 theme = Obsidian
+
+mouse-scroll-multiplier = 0.2
 
 macos-non-native-fullscreen = true
 macos-titlebar-style = tabs
@@ -20,3 +28,5 @@ keybind = super+shift+right=move_tab:1
 
 keybind = super+f=write_screen_file:open
 
+clipboard-read = allow
+clipboard-write = allow
