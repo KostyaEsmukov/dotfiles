@@ -20,6 +20,7 @@ if which brew; then
         htop \
         httpie \
         jq \
+        mtr \
         ncdu \
         nmap \
         pv \
@@ -46,6 +47,7 @@ elif which apt; then
     sudo -E apt install \
         bind9-dnsutils \
         bind9-host \
+        bmon \
         cloc \
         curl \
         git \
