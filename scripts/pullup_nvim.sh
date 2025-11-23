@@ -15,10 +15,12 @@ if which brew; then
         neovim
         npm
         pgformatter
+        prettier
         ruby
         shellcheck
         staticcheck
         the_silver_searcher
+        typescript-language-server
         wget
     "
     brew install $packages || brew upgrade $packages
