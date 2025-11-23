@@ -18,6 +18,8 @@ ln -svf ~/dotfiles/tmux.conf ~/.tmux.conf
 mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty/
 ln -svf ~/dotfiles/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config
 
+ln -svf ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+
 # Cleanup previously existing links
 [ -L ~/.ackrc ] && rm -vf ~/.ackrc
 [ -L ~/.ideavimrc ] && rm -vf ~/.ideavimrc

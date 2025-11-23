@@ -23,6 +23,7 @@ _install_common() {
         hex-fiend \
         kap \
         keka \
+        kitty \
         vlc \
         wireshark \
     ;
@@ -44,6 +45,10 @@ _install_common() {
 
     brew tap hashicorp/tap
     brew install hashicorp/tap/terraform
+
+    mkdir -p ~/.config/kitty/kitty-themes/themes
+    wget https://raw.githubusercontent.com/dexpota/kitty-themes/master/themes/Obsidian.conf \
+        -P ~/.config/kitty/kitty-themes/themes
 }
 
 _install_home() {
