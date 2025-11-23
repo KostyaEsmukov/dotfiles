@@ -4,7 +4,7 @@ call plug#begin()
 "## IDE-alike
 let g:polyglot_disabled = ['yaml']  " fix ansible-vim being shadowed by yaml-plugin
 Plug 'sheerun/vim-polyglot' " collection of plugins for many programming languages
-Plug 'saltstack/salt-vim'
+" Plug 'saltstack/salt-vim'
 Plug 'w0rp/ale' " linter
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -13,6 +13,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "## Files navigation + VCS
+Plug 'vim-scripts/a.vim' " \a -- switch between .h and .cpp, \ih switches to file under cursor
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons' " file icons
 Plug 'Xuyuanp/nerdtree-git-plugin' " shows git status in nerdtree
@@ -23,7 +24,6 @@ Plug 'tpope/vim-fugitive' " git wrapper (:Gblame)
 Plug 'mileszs/ack.vim' " search with ag
 Plug 'ctrlpvim/ctrlp.vim' " C-e alike of Intellij: buffers list, MRU, fzf
 Plug 'ruanyl/vim-gh-line' " \gh and \gb -- copies URL to git's remote origin site for the current line
-Plug 'tpope/vim-unimpaired' " [f ]f -- next/prev file
 Plug 'easymotion/vim-easymotion' " fast navigation. ]w  ]b  ]j  ]k
 Plug 'Olical/vim-enmasse' " edit via quickfix. :EnMasse
 Plug 'tyru/open-browser.vim' " fix for gx: https://github.com/vim/vim/issues/4738
@@ -97,6 +97,9 @@ nmap <leader>q :wqa<cr>
 
 "## Center the screen
 nnoremap <space> zz
+
+"## .h/.cpp alternate
+nnoremap <leader>a :A<CR>
 
 "# colors
 colorscheme kalisi
