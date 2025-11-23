@@ -293,6 +293,10 @@ sudo pmset -a displaysleep 2
 defaults write com.apple.Safari IncludeDevelopMenu 1
 defaults write com.apple.Safari PrivateBrowsingRequiresAuthentication 0
 
+
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+
+
 echo "Please reboot"
 
 echo "Toggle Reduce Motion off in the accessibility settings"
