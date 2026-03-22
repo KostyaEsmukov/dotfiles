@@ -26,7 +26,8 @@ keybind = super+right=next_tab
 keybind = super+shift+left=move_tab:-1
 keybind = super+shift+right=move_tab:1
 
-keybind = super+f=write_screen_file:open
+keybind = super+f=start_search
+keybind = super+o=write_screen_file:open
 
 clipboard-read = allow
 clipboard-write = allow
